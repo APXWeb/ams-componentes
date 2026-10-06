@@ -14,9 +14,12 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const megaRef = useRef<HTMLLIElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const [menuTop, setMenuTop] = useState(0);
 
+  // só a sombra muda ao rolar: a altura do topo é fixa para não empurrar a página
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -54,7 +57,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
   const isActive = (href: string) => pathname === href || pathname.startsWith(href + "/");
 
   return (
-    <header className={`site-header ${scrolled ? "is-scrolled" : ""} ${menuOpen ? "menu-open" : ""}`}>
+    <>
       <div className="utility">
         <div className="container utility__inner">
           <span className="utility__item">
@@ -76,6 +79,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
         </div>
       </div>
 
+    <header ref={headerRef} className={`site-header ${scrolled ? "is-scrolled" : ""} ${menuOpen ? "menu-open" : ""}`}>
       <div className="mainbar">
         <div className="container mainbar__inner">
           <Link href="/" className="brand" aria-label="AMS Componentes, página inicial">
@@ -163,14 +167,17 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
             aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={menuOpen}
             aria-controls="menu-mobile"
-            onClick={() => setMenuOpen((v) => !v)}
+            onClick={() => {
+              setMenuTop(headerRef.current?.getBoundingClientRect().bottom ?? 0);
+              setMenuOpen((v) => !v);
+            }}
           >
             {menuOpen ? <X aria-hidden /> : <Menu aria-hidden />}
           </button>
         </div>
       </div>
 
-      <div id="menu-mobile" className="mobile-menu" hidden={!menuOpen}>
+      <div id="menu-mobile" className="mobile-menu" hidden={!menuOpen} style={{ "--mobile-top": `${menuTop}px` } as React.CSSProperties}>
         <nav aria-label="Menu" className="container">
           <ul className="mobile-menu__list">
             <li>
@@ -205,5 +212,6 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
         </nav>
       </div>
     </header>
+    </>
   );
 }

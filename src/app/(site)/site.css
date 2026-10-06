@@ -33,12 +33,6 @@ main:focus {
   background: var(--navy-950);
   color: var(--navy-200);
   font-size: var(--fs-xs);
-  overflow: hidden;
-  max-height: 36px;
-  transition: max-height var(--t-base) var(--ease);
-}
-.site-header.is-scrolled .utility {
-  max-height: 0;
 }
 .utility__inner {
   display: flex;
@@ -89,11 +83,7 @@ a.utility__strong:hover {
   display: flex;
   align-items: center;
   gap: 28px;
-  height: 76px;
-  transition: height var(--t-base) var(--ease);
-}
-.site-header.is-scrolled .mainbar__inner {
-  height: 64px;
+  height: 72px;
 }
 .brand {
   display: flex;
@@ -104,12 +94,7 @@ a.utility__strong:hover {
 .brand__mark {
   width: 46px;
   height: auto;
-  transition:
-    width var(--t-base) var(--ease),
-    transform var(--t-slow) var(--ease);
-}
-.site-header.is-scrolled .brand__mark {
-  width: 40px;
+  transition: transform var(--t-slow) var(--ease);
 }
 .brand:hover .brand__mark {
   transform: rotate(-4deg);
@@ -325,14 +310,11 @@ a.utility__strong:hover {
     display: block;
     position: fixed;
     inset: 0;
-    top: var(--mobile-top, 112px);
+    top: var(--mobile-top, 72px);
     background: var(--surface);
     overflow-y: auto;
     animation: fade-in var(--t-base) var(--ease);
     padding: 8px 0 32px;
-  }
-  .site-header.is-scrolled .mobile-menu {
-    --mobile-top: 64px;
   }
   .mobile-menu__list {
     list-style: none;
@@ -376,9 +358,6 @@ a.utility__strong:hover {
   }
 }
 @media (max-width: 720px) {
-  .mobile-menu:not([hidden]) {
-    --mobile-top: 112px;
-  }
   .mainbar__inner {
     height: 64px;
   }
