@@ -1,0 +1,4333 @@
+{
+ "_source": "Conteúdo transcrito de https://amscomponentes.com.br (out/2026). Não alterar dados técnicos sem conferir com a AMS.",
+ "categories": [
+  {
+   "slug": "fusiveis",
+   "name": "Fusíveis",
+   "groups": [
+    {
+     "name": "Lâmina",
+     "items": [
+      "fusivel-lamina",
+      "fusivel-mini-lamina",
+      "fusivel-mini-lamina-perfil-baixo",
+      "fusivel-maxi-lamina",
+      "fusivel-maxi-lamina-plus",
+      "fusivel-lamina-micro-2",
+      "fusivel-lamina-micro-3",
+      "kit-de-fusiveis-lamina-kit-com-100-pecas",
+      "kit-de-fusiveis-de-emergencia"
+     ]
+    },
+    {
+     "name": "Mega",
+     "items": [
+      "fusivel-mega-femea",
+      "fusivel-mega-macho",
+      "fusivel-mega-macho-lateral",
+      "fusivel-mega-macho-lateral-elemento-curto"
+     ]
+    },
+    {
+     "name": "Midi",
+     "items": [
+      "fusivel-midi-femea",
+      "fusivel-midi-femea-perfil-baixo",
+      "fusivel-midi-femea-mcase",
+      "fusivel-midi-femea-mcase-fenda-plus",
+      "fusivel-midi-femea-jcase-standard"
+     ]
+    },
+    {
+     "name": "Potência",
+     "items": [
+      "fusivel-de-potencia-mega",
+      "fusivel-de-potencia-mega-com-flash-ouro",
+      "fusivel-de-potencia-mega-nylon",
+      "fusivel-de-potencia-midi",
+      "fusivel-de-potencia-midi-com-flash-ouro"
+     ]
+    },
+    {
+     "name": "Fusíveis",
+     "items": [
+      "multi-fusiveis",
+      "multi-fusiveis-bloco",
+      "fusiveis-de-diodo",
+      "fusiveis-reversor",
+      "fusiveis-de-cinta",
+      "fusiveis-europeu",
+      "fusiveis-para-motos"
+     ]
+    },
+    {
+     "name": "Vidro",
+     "items": [
+      "fusiveis-de-vidro",
+      "fusiveis-para-radios-e-equipamentos-eletronicos"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "porta-fusiveis",
+   "name": "Porta Fusíveis",
+   "groups": [
+    {
+     "name": "Porta Fusíveis",
+     "items": [
+      "porta-fusivel-lamina-maxi-e-mini",
+      "porta-fusivel-de-potencia",
+      "base-para-fusivel-de-potencia"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cordoalhas",
+   "name": "Cordoalhas",
+   "groups": [
+    {
+     "name": "Linha Leve",
+     "items": [
+      "cordoalhas-veiculos-leves-universal",
+      "cordoalhas-veiculos-leves-com-aterramento-duplo-universal",
+      "cordoalhas-veiculos-leves-com-aterramento-duplo-original",
+      "cordoalhas-veiculos-leves-duas-ponteiras"
+     ]
+    },
+    {
+     "name": "Linha Pesada",
+     "items": [
+      "cordoalhas-veiculos-pesados-1-terminal-e-1-ponteira",
+      "cordoalhas-veiculos-pesados-duas-ponteiras",
+      "barra-de-ligacao"
+     ]
+    },
+    {
+     "name": "Cordoalhas",
+     "items": [
+      "cordoalhas-para-bateria-em-metro"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cabos-para-bateria",
+   "name": "Cabos para Bateria",
+   "groups": [
+    {
+     "name": "Linha Leve",
+     "items": [
+      "cabos-de-bateria-veiculos-leve-universal-positivo",
+      "cabos-de-bateria-veiculos-leve-universal-negativo",
+      "cabos-para-bateria-veiculos-leve-2-ponteiras",
+      "cabos-positivo-com-rabicho-original",
+      "cabos-positivo-sem-rabicho-original",
+      "cabos-negativo-com-rabicho-original",
+      "cabo-auxiliar-do-alternador-para-motor-de-arranque"
+     ]
+    },
+    {
+     "name": "Linha Pesada",
+     "items": [
+      "cabo-especial-para-2-baterias"
+     ]
+    },
+    {
+     "name": "Cabos para Bateria",
+     "items": [
+      "cabos-para-baterias-em-metros",
+      "parafuso-com-porca-para-terminal-de-bateria"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "terminais-e-ponteiras",
+   "name": "Terminais e Ponteiras",
+   "groups": [
+    {
+     "name": "Terminais e Ponteiras",
+     "items": [
+      "terminais-de-bateria-3-vias",
+      "terminal-de-fio",
+      "ponteiras-para-bateria"
+     ]
+    },
+    {
+     "name": "Terminais para Cabos de Bateria",
+     "items": [
+      "terminal-tipo-sapinho",
+      "terminal-tipo-sapao"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "cabos-de-transferencia",
+   "name": "Cabos de Transferência de Carga",
+   "groups": [
+    {
+     "name": "Cabos de Transferência de Carga",
+     "items": [
+      "cabo-de-transferencia-veiculos-leve-ate-100-ampers",
+      "cabo-de-transferencia-veiculos-medios-ate-200-amperes",
+      "cabo-de-transferencia-veiculos-semi-pesados-ate-600-amperes",
+      "cabo-de-transferencia-veiculos-pesados-ate-800-amperes",
+      "cabo-de-transferencia-extrapesados"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "garras-e-manoplas",
+   "name": "Garras e Manoplas",
+   "groups": [
+    {
+     "name": "Garras e Manoplas",
+     "items": [
+      "garras-multiuso-jacare",
+      "garras-reforcada-alicatao",
+      "garras-multiuso-com-parafuso",
+      "garras-com-mola",
+      "manoplas"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "abracadeiras",
+   "name": "Abraçadeiras de Nylon",
+   "groups": [
+    {
+     "name": "Abraçadeiras de Nylon",
+     "items": [
+      "abracadeiras-de-nylon-branco",
+      "abracadeiras-de-nylon-preto"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "acessorios",
+   "name": "Acessórios",
+   "groups": [
+    {
+     "name": "Acessórios",
+     "items": [
+      "sacador-de-fusivel"
+     ]
+    }
+   ]
+  }
+ ],
+ "products": [
+  {
+   "slug": "fusivel-lamina",
+   "name": "Fusível Lâmina",
+   "category": "fusiveis",
+   "group": "Lâmina",
+   "application": [
+    "Veículos Nacionais: Todas as Montadoras",
+    "Veículos Importados: Todas as Montadoras",
+    "Motos: Todas as Montadoras"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "16001",
+     "1",
+     "Preto"
+    ],
+    [
+     "16002",
+     "2",
+     "Cinza"
+    ],
+    [
+     "16003",
+     "3",
+     "Violeta"
+    ],
+    [
+     "16004",
+     "4",
+     "Rosa"
+    ],
+    [
+     "16005",
+     "5",
+     "Laranja"
+    ],
+    [
+     "16007",
+     "7.5",
+     "Marrom"
+    ],
+    [
+     "16010",
+     "10",
+     "Vermelho"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-lamina1/",
+   "images": [
+    "/produtos/fusivel-lamina-1.webp",
+    "/produtos/fusivel-lamina-2.webp",
+    "/produtos/fusivel-lamina-3.webp",
+    "/produtos/fusivel-lamina-4.webp",
+    "/produtos/fusivel-lamina-5.webp",
+    "/produtos/fusivel-lamina-6.webp",
+    "/produtos/fusivel-lamina-7.webp",
+    "/produtos/fusivel-lamina-8.webp",
+    "/produtos/fusivel-lamina-9.webp",
+    "/produtos/fusivel-lamina-10.webp",
+    "/produtos/fusivel-lamina-11.webp",
+    "/produtos/fusivel-lamina-12.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-mini-lamina",
+   "name": "Fusível Mini Lâmina",
+   "category": "fusiveis",
+   "group": "Lâmina",
+   "application": [
+    "Veículos Nacionais: Todas as Montadoras",
+    "Veículos Importados: Todas as Montadoras",
+    "Motos: Todas as Montadoras"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "17003",
+     "3",
+     "Violeta"
+    ],
+    [
+     "17004",
+     "4",
+     "Rosa"
+    ],
+    [
+     "17005",
+     "5",
+     "Laranja"
+    ],
+    [
+     "17007",
+     "7.5",
+     "Marrom"
+    ],
+    [
+     "17010",
+     "10",
+     "Vermelho"
+    ],
+    [
+     "17015",
+     "15",
+     "Azul"
+    ],
+    [
+     "17020",
+     "20",
+     "Amarelo"
+    ],
+    [
+     "17025",
+     "25",
+     "Cristal"
+    ],
+    [
+     "17030",
+     "30",
+     "Verde"
+    ],
+    [
+     "17040",
+     "40",
+     "Amarelo"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-mini-lamina/",
+   "images": [
+    "/produtos/fusivel-mini-lamina-1.webp",
+    "/produtos/fusivel-mini-lamina-2.webp",
+    "/produtos/fusivel-mini-lamina-3.webp",
+    "/produtos/fusivel-mini-lamina-4.webp",
+    "/produtos/fusivel-mini-lamina-5.webp",
+    "/produtos/fusivel-mini-lamina-6.webp",
+    "/produtos/fusivel-mini-lamina-7.webp",
+    "/produtos/fusivel-mini-lamina-8.webp",
+    "/produtos/fusivel-mini-lamina-9.webp",
+    "/produtos/fusivel-mini-lamina-10.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-mini-lamina-perfil-baixo",
+   "name": "Fusível Mini Lâmina Perfil Baixo",
+   "category": "fusiveis",
+   "group": "Lâmina",
+   "application": [
+    "Veículos Nacionais e Importados:",
+    "Toyota, Nissan, Hyundai, Honda, GM, Fiat, Volkswagen"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "17505",
+     "5",
+     "Laranja"
+    ],
+    [
+     "17507",
+     "7.5",
+     "Marrom"
+    ],
+    [
+     "17510",
+     "10",
+     "Vermelho"
+    ],
+    [
+     "17515",
+     "15",
+     "Azul"
+    ],
+    [
+     "17520",
+     "20",
+     "Amarelo"
+    ],
+    [
+     "17525",
+     "25",
+     "Cristal;"
+    ],
+    [
+     "17530",
+     "30",
+     "Verde"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-mini-lamina-perfil-baixo/",
+   "images": [
+    "/produtos/fusivel-mini-lamina-perfil-baixo-1.webp",
+    "/produtos/fusivel-mini-lamina-perfil-baixo-2.webp",
+    "/produtos/fusivel-mini-lamina-perfil-baixo-3.webp",
+    "/produtos/fusivel-mini-lamina-perfil-baixo-4.webp",
+    "/produtos/fusivel-mini-lamina-perfil-baixo-5.webp",
+    "/produtos/fusivel-mini-lamina-perfil-baixo-6.webp",
+    "/produtos/fusivel-mini-lamina-perfil-baixo-7.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-maxi-lamina",
+   "name": "Fusível Maxi Lâmina",
+   "category": "fusiveis",
+   "group": "Lâmina",
+   "application": [
+    "Veículos Nacionais: Todas as Montadoras",
+    "Veículos Importados: Todas as Montadoras"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "18020",
+     "20",
+     "Amarelo"
+    ],
+    [
+     "18030",
+     "30",
+     "Verde"
+    ],
+    [
+     "18040",
+     "40",
+     "Laranja"
+    ],
+    [
+     "18050",
+     "50",
+     "Vermelho"
+    ],
+    [
+     "18060",
+     "60",
+     "Azul"
+    ],
+    [
+     "18070",
+     "70",
+     "Tangerina"
+    ],
+    [
+     "18080",
+     "80",
+     "Cristal"
+    ],
+    [
+     "18100",
+     "100",
+     "Lilás"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-maxi-lamina/",
+   "images": [
+    "/produtos/fusivel-maxi-lamina-1.webp",
+    "/produtos/fusivel-maxi-lamina-2.webp",
+    "/produtos/fusivel-maxi-lamina-3.webp",
+    "/produtos/fusivel-maxi-lamina-4.webp",
+    "/produtos/fusivel-maxi-lamina-5.webp",
+    "/produtos/fusivel-maxi-lamina-6.webp",
+    "/produtos/fusivel-maxi-lamina-7.webp",
+    "/produtos/fusivel-maxi-lamina-8.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-maxi-lamina-plus",
+   "name": "Fusível Maxi Lâmina Plus",
+   "category": "fusiveis",
+   "group": "Lâmina",
+   "application": [
+    "Fiat Modelos após 2020",
+    "Jeep Modelos após 2020"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "18520",
+     "20",
+     "Amarelo"
+    ],
+    [
+     "18525",
+     "25",
+     "Branco"
+    ],
+    [
+     "18530",
+     "30",
+     "Verde Claro"
+    ],
+    [
+     "18535",
+     "35",
+     "Verde Escuro"
+    ],
+    [
+     "18540",
+     "40",
+     "Laranja"
+    ],
+    [
+     "18550",
+     "50",
+     "Vermelho"
+    ],
+    [
+     "18560",
+     "60",
+     "Azul"
+    ]
+   ],
+   "launch": true,
+   "source": "https://amscomponentes.com.br/produto/fusivel-maxi-lamina-plus/",
+   "images": [
+    "/produtos/fusivel-maxi-lamina-plus-1.webp",
+    "/produtos/fusivel-maxi-lamina-plus-2.webp",
+    "/produtos/fusivel-maxi-lamina-plus-3.webp",
+    "/produtos/fusivel-maxi-lamina-plus-4.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-lamina-micro-2",
+   "name": "Fusível Lâmina Micro 2",
+   "category": "fusiveis",
+   "group": "Lâmina",
+   "application": [
+    "Ford após 2014",
+    "Nissan / Fiat",
+    "Renault após 2014"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "17705",
+     "5",
+     "Laranja"
+    ],
+    [
+     "17707",
+     "7,5",
+     "Marrom"
+    ],
+    [
+     "17710",
+     "10",
+     "Vermelho"
+    ],
+    [
+     "17715",
+     "15",
+     "Azul"
+    ],
+    [
+     "17720",
+     "20",
+     "Amarelo"
+    ],
+    [
+     "17725",
+     "25",
+     "Transparente"
+    ],
+    [
+     "17730",
+     "30",
+     "Verde"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-lamina-micro-2/",
+   "images": [
+    "/produtos/fusivel-lamina-micro-2-1.webp",
+    "/produtos/fusivel-lamina-micro-2-2.webp",
+    "/produtos/fusivel-lamina-micro-2-3.webp",
+    "/produtos/fusivel-lamina-micro-2-4.webp",
+    "/produtos/fusivel-lamina-micro-2-5.webp",
+    "/produtos/fusivel-lamina-micro-2-6.webp",
+    "/produtos/fusivel-lamina-micro-2-7.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-lamina-micro-3",
+   "name": "Fusível Lâmina Micro 3",
+   "category": "fusiveis",
+   "group": "Lâmina",
+   "application": [
+    "Ford após 2014"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "17805",
+     "5",
+     "Laranja"
+    ],
+    [
+     "17807",
+     "7,5",
+     "Marrom"
+    ],
+    [
+     "17810",
+     "10",
+     "Vermelho"
+    ],
+    [
+     "17815",
+     "15",
+     "Azul"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-lamina-micro-3/",
+   "images": [
+    "/produtos/fusivel-lamina-micro-3-1.webp",
+    "/produtos/fusivel-lamina-micro-3-2.webp",
+    "/produtos/fusivel-lamina-micro-3-3.webp",
+    "/produtos/fusivel-lamina-micro-3-4.webp"
+   ]
+  },
+  {
+   "slug": "kit-de-fusiveis-lamina-kit-com-100-pecas",
+   "name": "Kit de Fusíveis Lâmina – Kit com 100 Peças",
+   "category": "fusiveis",
+   "group": "Lâmina",
+   "application": [
+    "Consulte nosso kit de 60 peças"
+   ],
+   "columns": [
+    "Corrente nominal",
+    "Cor",
+    "Qtd."
+   ],
+   "rows": [
+    [
+     "10A",
+     "Vermelho",
+     "20"
+    ],
+    [
+     "15A",
+     "Azul",
+     "20"
+    ],
+    [
+     "20A",
+     "Amarelo",
+     "20"
+    ],
+    [
+     "25A",
+     "Cristal",
+     "20"
+    ],
+    [
+     "30A",
+     "Verde",
+     "20"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/kit-de-fusiveis-lamina-kit-com-100-pecas/",
+   "images": [
+    "/produtos/kit-de-fusiveis-lamina-kit-com-100-pecas-1.webp"
+   ]
+  },
+  {
+   "slug": "kit-de-fusiveis-de-emergencia",
+   "name": "Kit de Fusíveis de Emergência",
+   "category": "fusiveis",
+   "group": "Lâmina",
+   "application": [
+    "2 Peças de Cada"
+   ],
+   "columns": [
+    "Código",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "16221",
+     "Lâmina 10 à 30A"
+    ],
+    [
+     "17221",
+     "Mini Lâmina 10 à 30A"
+    ],
+    [
+     "17599",
+     "Mini Lâmina Perfil Baixo 10 à 30A"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/kit-de-fusiveis-de-emergencia/",
+   "images": [
+    "/produtos/kit-de-fusiveis-de-emergencia-1.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-mega-femea",
+   "name": "Fusível Mega Fêmea",
+   "category": "fusiveis",
+   "group": "Mega",
+   "application": [
+    "Chrysler, Ford, Honda,  Hyundai, Isuzu, Lexus, Mazda, Mitsubishi, Suzuki e Toyota"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "19020",
+     "20",
+     "Azul Claro / Branco"
+    ],
+    [
+     "19030",
+     "30",
+     "Rosa"
+    ],
+    [
+     "19040",
+     "40",
+     "Verde"
+    ],
+    [
+     "19050",
+     "50",
+     "Vermelho"
+    ],
+    [
+     "19060",
+     "60",
+     "Amarelo"
+    ],
+    [
+     "19070",
+     "70",
+     "Marrom"
+    ],
+    [
+     "19080",
+     "80",
+     "Preto"
+    ],
+    [
+     "190100",
+     "100",
+     "Azul"
+    ],
+    [
+     "190120",
+     "120",
+     "Cinza"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-mega-femea/",
+   "images": [
+    "/produtos/fusivel-mega-femea-1.webp",
+    "/produtos/fusivel-mega-femea-2.webp",
+    "/produtos/fusivel-mega-femea-3.webp",
+    "/produtos/fusivel-mega-femea-4.webp",
+    "/produtos/fusivel-mega-femea-5.webp",
+    "/produtos/fusivel-mega-femea-6.webp",
+    "/produtos/fusivel-mega-femea-7.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-mega-macho",
+   "name": "Fusível Mega Macho",
+   "category": "fusiveis",
+   "group": "Mega",
+   "application": [
+    "Ford, Hyundai, Jeep, Isuzu, Kia, Lexus, Mazda, Mitsubishi, Nissan, Suzuki, Chrysler, Toyota, Subaru, Volvo e Volkswagen"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "19120",
+     "20",
+     "Azul Claro / Branco"
+    ],
+    [
+     "19130",
+     "30",
+     "Rosa"
+    ],
+    [
+     "19140",
+     "40",
+     "Verde"
+    ],
+    [
+     "19150",
+     "50",
+     "Vermelho"
+    ],
+    [
+     "19160",
+     "60",
+     "Amarelo"
+    ],
+    [
+     "19170",
+     "70",
+     "Marrom"
+    ],
+    [
+     "19180",
+     "80",
+     "Preto"
+    ],
+    [
+     "191100",
+     "100",
+     "Azul"
+    ],
+    [
+     "191120",
+     "120",
+     "Cinza"
+    ],
+    [
+     "191140",
+     "140",
+     "Roxo"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-mega-macho/",
+   "images": [
+    "/produtos/fusivel-mega-macho-1.webp",
+    "/produtos/fusivel-mega-macho-2.webp",
+    "/produtos/fusivel-mega-macho-3.webp",
+    "/produtos/fusivel-mega-macho-4.webp",
+    "/produtos/fusivel-mega-macho-5.webp",
+    "/produtos/fusivel-mega-macho-6.webp",
+    "/produtos/fusivel-mega-macho-7.webp",
+    "/produtos/fusivel-mega-macho-8.webp",
+    "/produtos/fusivel-mega-macho-9.webp",
+    "/produtos/fusivel-mega-macho-10.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-mega-macho-lateral",
+   "name": "Fusível Mega Macho Lateral",
+   "category": "fusiveis",
+   "group": "Mega",
+   "application": [
+    "Veículos Importados: Ford, Honda, Hyundai, Kia, Mazda, Mitsubishi, Nissan, Suzuki, Chrysler, Toyota e Subaru"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "19230",
+     "30",
+     "Rosa"
+    ],
+    [
+     "19240",
+     "40",
+     "Verde"
+    ],
+    [
+     "19250",
+     "50",
+     "Vermelho"
+    ],
+    [
+     "19260",
+     "60",
+     "Amarelo"
+    ],
+    [
+     "19270",
+     "70",
+     "Marrom"
+    ],
+    [
+     "19280",
+     "80",
+     "Preto"
+    ],
+    [
+     "192100",
+     "100",
+     "Azul"
+    ],
+    [
+     "192120",
+     "120",
+     "Cinza"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-mega-macho-lateral/",
+   "images": [
+    "/produtos/fusivel-mega-macho-lateral-1.webp",
+    "/produtos/fusivel-mega-macho-lateral-2.webp",
+    "/produtos/fusivel-mega-macho-lateral-3.webp",
+    "/produtos/fusivel-mega-macho-lateral-4.webp",
+    "/produtos/fusivel-mega-macho-lateral-5.webp",
+    "/produtos/fusivel-mega-macho-lateral-6.webp",
+    "/produtos/fusivel-mega-macho-lateral-7.webp",
+    "/produtos/fusivel-mega-macho-lateral-8.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-mega-macho-lateral-elemento-curto",
+   "name": "Fusível Mega Macho Lateral Elemento Curto",
+   "category": "fusiveis",
+   "group": "Mega",
+   "application": [
+    "Veículos Importados: Chrysler, Ford, Hyundai, Kia, Toyota, Subaru, Mitsubishi, Nissan, Honda, Mazda e Suzuki"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "19630",
+     "30",
+     "Rosa"
+    ],
+    [
+     "19640",
+     "40",
+     "Verde"
+    ],
+    [
+     "19650",
+     "50",
+     "Vermelho"
+    ],
+    [
+     "19660",
+     "60",
+     "Amarelo"
+    ],
+    [
+     "19670",
+     "70",
+     "Marrom"
+    ],
+    [
+     "19680",
+     "80",
+     "Preto"
+    ],
+    [
+     "196100",
+     "100",
+     "Azul"
+    ],
+    [
+     "196120",
+     "120",
+     "Cinza"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-mega-macho-lateral-elemento-curto/",
+   "images": [
+    "/produtos/fusivel-mega-macho-lateral-elemento-curto-1.webp",
+    "/produtos/fusivel-mega-macho-lateral-elemento-curto-2.webp",
+    "/produtos/fusivel-mega-macho-lateral-elemento-curto-3.webp",
+    "/produtos/fusivel-mega-macho-lateral-elemento-curto-4.webp",
+    "/produtos/fusivel-mega-macho-lateral-elemento-curto-5.webp",
+    "/produtos/fusivel-mega-macho-lateral-elemento-curto-6.webp",
+    "/produtos/fusivel-mega-macho-lateral-elemento-curto-7.webp",
+    "/produtos/fusivel-mega-macho-lateral-elemento-curto-8.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-midi-femea",
+   "name": "Fusível Midi Fêmea",
+   "category": "fusiveis",
+   "group": "Midi",
+   "application": [
+    "Ford, Nissan, Toyota, Kia e Subaru"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "19320",
+     "20",
+     "Azul Claro"
+    ],
+    [
+     "19330",
+     "30",
+     "Rosa"
+    ],
+    [
+     "19340",
+     "40",
+     "Verde"
+    ],
+    [
+     "19350",
+     "50",
+     "Vermelho"
+    ],
+    [
+     "19360",
+     "60",
+     "Amarelo"
+    ],
+    [
+     "19370",
+     "70",
+     "Marrom"
+    ],
+    [
+     "19380",
+     "80",
+     "Preto"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-midi-femea/",
+   "images": [
+    "/produtos/fusivel-midi-femea-1.webp",
+    "/produtos/fusivel-midi-femea-2.webp",
+    "/produtos/fusivel-midi-femea-3.webp",
+    "/produtos/fusivel-midi-femea-4.webp",
+    "/produtos/fusivel-midi-femea-5.webp",
+    "/produtos/fusivel-midi-femea-6.webp",
+    "/produtos/fusivel-midi-femea-7.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-midi-femea-perfil-baixo",
+   "name": "Fusível Midi Fêmea Perfil Baixo",
+   "category": "fusiveis",
+   "group": "Midi",
+   "application": [
+    "Ford, GM e Toyota"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "19520",
+     "20",
+     "Azul Claro"
+    ],
+    [
+     "19525",
+     "25",
+     "Branco"
+    ],
+    [
+     "19530",
+     "30",
+     "Rosa"
+    ],
+    [
+     "19540",
+     "40",
+     "Verde"
+    ],
+    [
+     "19550",
+     "50",
+     "Vermelho"
+    ],
+    [
+     "19560",
+     "60",
+     "Amarelo"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-midi-femea-perfil-baixo/",
+   "images": [
+    "/produtos/fusivel-midi-femea-perfil-baixo-1.webp",
+    "/produtos/fusivel-midi-femea-perfil-baixo-2.webp",
+    "/produtos/fusivel-midi-femea-perfil-baixo-3.webp",
+    "/produtos/fusivel-midi-femea-perfil-baixo-4.webp",
+    "/produtos/fusivel-midi-femea-perfil-baixo-5.webp",
+    "/produtos/fusivel-midi-femea-perfil-baixo-6.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-midi-femea-mcase",
+   "name": "Fusível Midi Fêmea MCase",
+   "category": "fusiveis",
+   "group": "Midi",
+   "application": [
+    "Ford: EcoEsport (modelo novo)",
+    "KA (modelo novo)"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "19720",
+     "20",
+     "Azul Claro"
+    ],
+    [
+     "19725",
+     "25",
+     "Bege"
+    ],
+    [
+     "19730",
+     "30",
+     "Rosa"
+    ],
+    [
+     "19740",
+     "40",
+     "Verde"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-midi-femea-mcase/",
+   "images": [
+    "/produtos/fusivel-midi-femea-mcase-1.webp",
+    "/produtos/fusivel-midi-femea-mcase-2.webp",
+    "/produtos/fusivel-midi-femea-mcase-3.webp",
+    "/produtos/fusivel-midi-femea-mcase-4.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-midi-femea-mcase-fenda-plus",
+   "name": "Fusível Midi Fêmea MCase Fenda Plus",
+   "category": "fusiveis",
+   "group": "Midi",
+   "application": [
+    "Ford"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "19815",
+     "15",
+     "Cinza"
+    ],
+    [
+     "19820",
+     "20",
+     "Azul"
+    ],
+    [
+     "19825",
+     "25",
+     "Bege"
+    ],
+    [
+     "19830",
+     "30",
+     "Rosa"
+    ],
+    [
+     "19840",
+     "40",
+     "Verde"
+    ],
+    [
+     "19850",
+     "50",
+     "Vermelho"
+    ],
+    [
+     "19860",
+     "60",
+     "Amarelo"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-midi-femea-mcase-fenda-plus/",
+   "images": [
+    "/produtos/fusivel-midi-femea-mcase-fenda-plus-1.webp",
+    "/produtos/fusivel-midi-femea-mcase-fenda-plus-2.webp",
+    "/produtos/fusivel-midi-femea-mcase-fenda-plus-3.webp",
+    "/produtos/fusivel-midi-femea-mcase-fenda-plus-4.webp",
+    "/produtos/fusivel-midi-femea-mcase-fenda-plus-5.webp",
+    "/produtos/fusivel-midi-femea-mcase-fenda-plus-6.webp",
+    "/produtos/fusivel-midi-femea-mcase-fenda-plus-7.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-midi-femea-jcase-standard",
+   "name": "Fusível Midi Fêmea JCase Standard",
+   "category": "fusiveis",
+   "group": "Midi",
+   "application": [
+    "Ford, Honda, Toyota, Chrysler e Jeep"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "19420",
+     "20",
+     "Azul Claro"
+    ],
+    [
+     "19425",
+     "25",
+     "Branco"
+    ],
+    [
+     "19430",
+     "30",
+     "Rosa"
+    ],
+    [
+     "19440",
+     "40",
+     "Verde"
+    ],
+    [
+     "19550",
+     "50",
+     "Vermelho"
+    ],
+    [
+     "19460",
+     "60",
+     "Amarelo"
+    ],
+    [
+     "194170",
+     "70",
+     "Marrom"
+    ],
+    [
+     "194180",
+     "80",
+     "Preto"
+    ],
+    [
+     "194120",
+     "120",
+     "Cinza"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-midi-femea-jcase-standard/",
+   "images": [
+    "/produtos/fusivel-midi-femea-jcase-standard-1.webp",
+    "/produtos/fusivel-midi-femea-jcase-standard-2.webp",
+    "/produtos/fusivel-midi-femea-jcase-standard-3.webp",
+    "/produtos/fusivel-midi-femea-jcase-standard-4.webp",
+    "/produtos/fusivel-midi-femea-jcase-standard-5.webp",
+    "/produtos/fusivel-midi-femea-jcase-standard-6.webp",
+    "/produtos/fusivel-midi-femea-jcase-standard-7.webp",
+    "/produtos/fusivel-midi-femea-jcase-standard-8.webp",
+    "/produtos/fusivel-midi-femea-jcase-standard-9.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-de-potencia-mega",
+   "name": "Fusível de Potência Mega",
+   "category": "fusiveis",
+   "group": "Potência",
+   "application": [
+    "Utilizado para proteção de módulos e instalação de som, equipamentos e circuitos de alta corrente com voltagem máxima de 32V",
+    "Matéria Prima: Policarbonato / Zinco",
+    "Medidas: 69x19mm"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem"
+   ],
+   "rows": [
+    [
+     "20040",
+     "40"
+    ],
+    [
+     "20100",
+     "100"
+    ],
+    [
+     "20125",
+     "125"
+    ],
+    [
+     "20150",
+     "150"
+    ],
+    [
+     "20175",
+     "175"
+    ],
+    [
+     "20200",
+     "200"
+    ],
+    [
+     "20225",
+     "225"
+    ],
+    [
+     "20250",
+     "250"
+    ],
+    [
+     "20300",
+     "300"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-de-potencia-mega/",
+   "images": [
+    "/produtos/fusivel-de-potencia-mega-1.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-de-potencia-mega-com-flash-ouro",
+   "name": "Fusível de Potência Mega com Flash Ouro",
+   "category": "fusiveis",
+   "group": "Potência",
+   "application": [
+    "Utilizado para proteção de módulos e instalação de som, equipamentos e circuitos de alta corrente com voltagem máxima de 32V",
+    "Matéria Prima: Policarbonato / Zinco",
+    "Medidas: 69x19mm"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem"
+   ],
+   "rows": [
+    [
+     "20101",
+     "100"
+    ],
+    [
+     "20126",
+     "125"
+    ],
+    [
+     "20151",
+     "150"
+    ],
+    [
+     "20176",
+     "175"
+    ],
+    [
+     "20201",
+     "200"
+    ],
+    [
+     "20226",
+     "225"
+    ],
+    [
+     "20251",
+     "250"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-de-potencia-mega-com-flash-ouro/",
+   "images": [
+    "/produtos/fusivel-de-potencia-mega-com-flash-ouro-1.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-de-potencia-mega-nylon",
+   "name": "Fusível de Potência Mega NYLON",
+   "category": "fusiveis",
+   "group": "Potência",
+   "application": [
+    "Circuito de alta corrente com voltagem máxima de 32V",
+    "Linha Pesada como Chave Geral"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem"
+   ],
+   "rows": [
+    [
+     "26080",
+     "80"
+    ],
+    [
+     "26100",
+     "100"
+    ],
+    [
+     "26125",
+     "125"
+    ],
+    [
+     "26150",
+     "150"
+    ],
+    [
+     "26175",
+     "175"
+    ],
+    [
+     "26200",
+     "200"
+    ],
+    [
+     "26225",
+     "225"
+    ],
+    [
+     "26250",
+     "250"
+    ],
+    [
+     "26300",
+     "300"
+    ],
+    [
+     "26400",
+     "400"
+    ],
+    [
+     "26500",
+     "500"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-de-potencia-mega-nylon/",
+   "images": [
+    "/produtos/fusivel-de-potencia-mega-nylon-1.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-de-potencia-midi",
+   "name": "Fusível de Potência Midi",
+   "category": "fusiveis",
+   "group": "Potência",
+   "application": [
+    "Utilizado para proteção de módulos e instalação de som, equipamentos e circuitos de alta corrente com voltagem máxima de 32V",
+    "Matéria Prima: Policarbonato / Zinco",
+    "Medidas: 40x12mm"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem"
+   ],
+   "rows": [
+    [
+     "21030",
+     "30"
+    ],
+    [
+     "21040",
+     "40"
+    ],
+    [
+     "21050",
+     "50"
+    ],
+    [
+     "21060",
+     "60"
+    ],
+    [
+     "21070",
+     "70"
+    ],
+    [
+     "21080",
+     "80"
+    ],
+    [
+     "21100",
+     "100"
+    ],
+    [
+     "21125",
+     "125"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-de-potencia-midi/",
+   "images": [
+    "/produtos/fusivel-de-potencia-midi-1.webp"
+   ]
+  },
+  {
+   "slug": "fusivel-de-potencia-midi-com-flash-ouro",
+   "name": "Fusível de Potência Midi com Flash Ouro",
+   "category": "fusiveis",
+   "group": "Potência",
+   "application": [
+    "Utilizado para proteção de módulos e instalação de som, equipamentos e circuitos de alta corrente com voltagem máxima de 32V",
+    "Matéria Prima: Policarbonato / Zinco",
+    "Medidas: 40x12mm"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem"
+   ],
+   "rows": [
+    [
+     "21031",
+     "30"
+    ],
+    [
+     "21041",
+     "40"
+    ],
+    [
+     "21051",
+     "50"
+    ],
+    [
+     "21061",
+     "60"
+    ],
+    [
+     "21071",
+     "70"
+    ],
+    [
+     "21081",
+     "80"
+    ],
+    [
+     "21101",
+     "100"
+    ],
+    [
+     "21126",
+     "125"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusivel-de-potencia-midi-com-flash-ouro/",
+   "images": [
+    "/produtos/fusivel-de-potencia-midi-com-flash-ouro-1.webp"
+   ]
+  },
+  {
+   "slug": "multi-fusiveis",
+   "name": "Multi Fusíveis",
+   "category": "fusiveis",
+   "group": "Fusíveis",
+   "application": [
+    "Nissan"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Cor"
+   ],
+   "rows": [
+    [
+     "199433",
+     "40-30-30",
+     "Rosa"
+    ],
+    [
+     "199444",
+     "40-40-40",
+     "Verde"
+    ],
+    [
+     "199533",
+     "50-30-30",
+     "Vermelho"
+    ],
+    [
+     "199534",
+     "50-30-40",
+     "Azul"
+    ],
+    [
+     "199633",
+     "60-30-30",
+     "Amarelo"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/multi-fusiveis/",
+   "images": [
+    "/produtos/multi-fusiveis-1.webp",
+    "/produtos/multi-fusiveis-2.webp",
+    "/produtos/multi-fusiveis-3.webp",
+    "/produtos/multi-fusiveis-4.webp"
+   ]
+  },
+  {
+   "slug": "multi-fusiveis-bloco",
+   "name": "Multi Fusíveis Bloco",
+   "category": "fusiveis",
+   "group": "Fusíveis",
+   "application": [
+    "Hyundai Accent, Cerato, HB20",
+    "Kia Rio, Soul, Veloster",
+    "Número orig: 1879001031",
+    "Peso: 0,0460 kg"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem",
+    "Nº original",
+    "Peso"
+   ],
+   "rows": [
+    [
+     "165125",
+     "125",
+     "1879001031",
+     "0,0460 kg"
+    ]
+   ],
+   "launch": true,
+   "source": "https://amscomponentes.com.br/produto/multi-fusiveis-bloco/",
+   "images": [
+    "/produtos/multi-fusiveis-bloco-1.webp",
+    "/produtos/multi-fusiveis-bloco-2.webp"
+   ]
+  },
+  {
+   "slug": "fusiveis-de-diodo",
+   "name": "Fusíveis de Diodo",
+   "category": "fusiveis",
+   "group": "Fusíveis",
+   "application": [],
+   "columns": [
+    "Código",
+    "Amp.",
+    "Volts",
+    "Cor",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "17101",
+     "1",
+     "400",
+     "Preto",
+     "Sandero II, Logan II, Laguna II, Captur, Duster"
+    ],
+    [
+     "16111",
+     "1",
+     "700",
+     "Cinza",
+     "Todos os caminhões e ônibus com central eletrônica"
+    ],
+    [
+     "16143",
+     "4.3",
+     "700-800",
+     "Laranja",
+     "Todos os caminhões e ônibus com central eletrônica"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusiveis-de-diodo/",
+   "images": [
+    "/produtos/fusiveis-de-diodo-1.webp",
+    "/produtos/fusiveis-de-diodo-2.webp",
+    "/produtos/fusiveis-de-diodo-3.webp"
+   ]
+  },
+  {
+   "slug": "fusiveis-reversor",
+   "name": "Fusíveis Reversor",
+   "category": "fusiveis",
+   "group": "Fusíveis",
+   "application": [
+    "Para comutador reversível de 12 para 24 volts no momento da partida de ignição em caminhões, ônibus e tratores"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem"
+   ],
+   "rows": [
+    [
+     "14030",
+     "30"
+    ],
+    [
+     "14050",
+     "50"
+    ],
+    [
+     "14080",
+     "80"
+    ],
+    [
+     "14100",
+     "100"
+    ],
+    [
+     "14125",
+     "125"
+    ],
+    [
+     "14150",
+     "150"
+    ],
+    [
+     "14200",
+     "200"
+    ],
+    [
+     "14250",
+     "250"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusiveis-reversor/",
+   "images": [
+    "/produtos/fusiveis-reversor-1.webp",
+    "/produtos/fusiveis-reversor-2.webp"
+   ]
+  },
+  {
+   "slug": "fusiveis-de-cinta",
+   "name": "Fusíveis de Cinta",
+   "category": "fusiveis",
+   "group": "Fusíveis",
+   "application": [
+    "Todos os veículos da linha Volkswagen",
+    "Localizado junto à bateria para a proteção de equipamentos que utilizam correntes mais altas"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem"
+   ],
+   "rows": [
+    [
+     "23030",
+     "30"
+    ],
+    [
+     "23040",
+     "40"
+    ],
+    [
+     "23050",
+     "50"
+    ],
+    [
+     "23060",
+     "60"
+    ],
+    [
+     "23110",
+     "110"
+    ],
+    [
+     "23150",
+     "150"
+    ],
+    [
+     "23175",
+     "175"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusiveis-de-cinta/",
+   "images": [
+    "/produtos/fusiveis-de-cinta-1.webp",
+    "/produtos/fusiveis-de-cinta-2.webp"
+   ]
+  },
+  {
+   "slug": "fusiveis-europeu",
+   "name": "Fusíveis Europeu",
+   "category": "fusiveis",
+   "group": "Fusíveis",
+   "application": [
+    "Volkswagen (até 1988), Fiat (até 1990), Caminhões Mercedes, Scania e Volvo (até 1990), Toyota Bandeirantes",
+    "MEDIDAS: 25.00mm"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem"
+   ],
+   "rows": [
+    [
+     "11008",
+     "8"
+    ],
+    [
+     "11015",
+     "15"
+    ],
+    [
+     "11030",
+     "30"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusiveis-europeu/",
+   "images": [
+    "/produtos/fusiveis-europeu-1.webp",
+    "/produtos/fusiveis-europeu-2.webp",
+    "/produtos/fusiveis-europeu-3.webp"
+   ]
+  },
+  {
+   "slug": "fusiveis-para-motos",
+   "name": "Fusíveis para Motos",
+   "category": "fusiveis",
+   "group": "Fusíveis",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Amperagem",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "12005",
+     "29,0x6,35",
+     "5",
+     "Yamaha"
+    ],
+    [
+     "12007",
+     "29,0x6,35",
+     "7",
+     "Honda"
+    ],
+    [
+     "12008",
+     "25,4x6,35",
+     "7",
+     "Honda"
+    ],
+    [
+     "12010",
+     "29,0x6,35",
+     "10",
+     "Honda"
+    ],
+    [
+     "12011",
+     "25,4x6,35",
+     "10",
+     "Yamaha"
+    ],
+    [
+     "10015",
+     "31,7x6,35",
+     "15",
+     "Honda"
+    ],
+    [
+     "12015",
+     "29,0x6,35",
+     "15",
+     "Agrale (todos os modelos)"
+    ],
+    [
+     "12016",
+     "25,4x6,35",
+     "15",
+     "Yamaha"
+    ],
+    [
+     "12020",
+     "25,4x6,35",
+     "20",
+     "Honda, Yamaha, BMW, Kawasaki, Suzuki"
+    ],
+    [
+     "12030",
+     "Engate",
+     "30",
+     "Honda"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusiveis-para-motos/",
+   "images": [
+    "/produtos/fusiveis-para-motos-1.webp",
+    "/produtos/fusiveis-para-motos-2.webp",
+    "/produtos/fusiveis-para-motos-3.webp"
+   ]
+  },
+  {
+   "slug": "fusiveis-de-vidro",
+   "name": "Fusíveis de Vidro",
+   "category": "fusiveis",
+   "group": "Vidro",
+   "application": [
+    "Chevrolet, Ford, Autos, Pick-ups e Caminhões até 1984, Tratores, Caterpillar, CBT, Massey Ferguson, Valmet",
+    "MEDIDAS: 31,75 x 6,35 mm"
+   ],
+   "columns": [
+    "Código",
+    "Amperagem"
+   ],
+   "rows": [
+    [
+     "10010",
+     "10"
+    ],
+    [
+     "10015",
+     "15"
+    ],
+    [
+     "10020",
+     "20"
+    ],
+    [
+     "10025",
+     "25"
+    ],
+    [
+     "10030",
+     "30"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusiveis-de-vidro/",
+   "images": [
+    "/produtos/fusiveis-de-vidro-1.webp"
+   ]
+  },
+  {
+   "slug": "fusiveis-para-radios-e-equipamentos-eletronicos",
+   "name": "Fusíveis para Rádios e Equipamentos Eletrônicos",
+   "category": "fusiveis",
+   "group": "Vidro",
+   "application": [
+    "Utilizados em rádios, aparelhos eletrônicos e equipamentos eletroeletrônicos"
+   ],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Amperagem"
+   ],
+   "rows": [
+    [
+     "13002",
+     "31,75x6,35",
+     "2"
+    ],
+    [
+     "13003",
+     "31,75x6,35",
+     "3"
+    ],
+    [
+     "13005",
+     "31,75x6,35",
+     "5"
+    ],
+    [
+     "15002",
+     "20,00x5,00",
+     "2"
+    ],
+    [
+     "15003",
+     "20,00x5,00",
+     "3"
+    ],
+    [
+     "15005",
+     "20,00x5,00",
+     "5"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/fusiveis-para-radios-e-equipamentos-eletronicos/",
+   "images": [
+    "/produtos/fusiveis-para-radios-e-equipamentos-eletronicos-1.webp"
+   ]
+  },
+  {
+   "slug": "porta-fusivel-lamina-maxi-e-mini",
+   "name": "Porta Fusível Lâmina, Maxi e Mini",
+   "category": "porta-fusiveis",
+   "group": "Porta Fusíveis",
+   "application": [],
+   "columns": [
+    "Código",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "50001",
+     "Fusível de Lâmina até 20A - Cabinho 1,5 mm"
+    ],
+    [
+     "50002",
+     "Fusível de Lâmina 25 e 3A - Cabinho 2,5 mm"
+    ],
+    [
+     "50003",
+     "Fusível Maxi Lâmina até 50A - Cabinho 4,0 mm"
+    ],
+    [
+     "50004",
+     "Fusível Mini Lâmina - Cabinho 1,5 mm"
+    ],
+    [
+     "50012",
+     "Fusível de Lâmina 40A - Cabinho 4,0 mm"
+    ],
+    [
+     "50013",
+     "Fusível Maxi Lâmina acima de 50A - Cabinho 6,0 mm"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/porta-fusivel-lamina-maxi-e-mini/",
+   "images": [
+    "/produtos/porta-fusivel-lamina-maxi-e-mini-1.webp",
+    "/produtos/porta-fusivel-lamina-maxi-e-mini-2.webp",
+    "/produtos/porta-fusivel-lamina-maxi-e-mini-3.webp",
+    "/produtos/porta-fusivel-lamina-maxi-e-mini-4.webp",
+    "/produtos/porta-fusivel-lamina-maxi-e-mini-5.webp",
+    "/produtos/porta-fusivel-lamina-maxi-e-mini-6.webp"
+   ]
+  },
+  {
+   "slug": "porta-fusivel-de-potencia",
+   "name": "Porta Fusível de Potência",
+   "category": "porta-fusiveis",
+   "group": "Porta Fusíveis",
+   "application": [
+    "Porta Fusível de Potência"
+   ],
+   "columns": [
+    "Código",
+    "Modelo"
+   ],
+   "rows": [
+    [
+     "50005",
+     "MIDI"
+    ],
+    [
+     "50006",
+     "MEGA"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/porta-fusivel-de-potencia/",
+   "images": [
+    "/produtos/porta-fusivel-de-potencia-1.webp",
+    "/produtos/porta-fusivel-de-potencia-2.webp"
+   ]
+  },
+  {
+   "slug": "base-para-fusivel-de-potencia",
+   "name": "Base para Fusível de Potência",
+   "category": "porta-fusiveis",
+   "group": "Porta Fusíveis",
+   "application": [
+    "Base para Fusível de Potência"
+   ],
+   "columns": [
+    "Código",
+    "Modelo"
+   ],
+   "rows": [
+    [
+     "51005",
+     "MIDI"
+    ],
+    [
+     "51006",
+     "MEGA"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/base-para-fusivel-de-potencia/",
+   "images": [
+    "/produtos/base-para-fusivel-de-potencia-1.webp",
+    "/produtos/base-para-fusivel-de-potencia-2.webp"
+   ]
+  },
+  {
+   "slug": "cordoalhas-veiculos-leves-universal",
+   "name": "Cordoalhas Veículos Leves – Universal",
+   "category": "cordoalhas",
+   "group": "Linha Leve",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "33015",
+     "15cm",
+     "Monza, Chevette"
+    ],
+    [
+     "33020",
+     "20cm",
+     "Gol a Ar, Variant TL I e II, Corcel, Belina, Del Rey, Chevette, Opala e Caravan"
+    ],
+    [
+     "33025",
+     "25cm",
+     "Brasília, Lada"
+    ],
+    [
+     "33030",
+     "30cm",
+     "Volks Sedan, Kombi, TL, K. Ghia, Del Rey Veraneio, A-60, C-10, D-10"
+    ],
+    [
+     "33035",
+     "35cm",
+     "Brasília, Kombi, Del Rey, Corcel II, Belina II, Gurgel"
+    ],
+    [
+     "33040",
+     "40cm",
+     "Agrale 1600-D, 1800-D, Ultravans"
+    ],
+    [
+     "33045",
+     "45cm",
+     "Uno, Premio, Elba, Fiat 147, Panorama"
+    ],
+    [
+     "33050",
+     "50cm",
+     "Santana"
+    ],
+    [
+     "33060",
+     "60cm",
+     "-"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cordoalhas-veiculos-leves-universal/",
+   "images": [
+    "/produtos/cordoalhas-veiculos-leves-universal-1.webp"
+   ]
+  },
+  {
+   "slug": "cordoalhas-veiculos-leves-com-aterramento-duplo-universal",
+   "name": "Cordoalhas Veículos Leves – Com Aterramento Duplo – Universal",
+   "category": "cordoalhas",
+   "group": "Linha Leve",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "34040",
+     "40cm",
+     "Voyage"
+    ],
+    [
+     "34045",
+     "45cm",
+     "Passat"
+    ],
+    [
+     "34050",
+     "50cm",
+     "Santana, Parati, Apollo, Gol (modelo antigo)"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cordoalhas-veiculos-leves-com-aterramento-duplo-universal/",
+   "images": [
+    "/produtos/cordoalhas-veiculos-leves-com-aterramento-duplo-universal-1.webp"
+   ]
+  },
+  {
+   "slug": "cordoalhas-veiculos-leves-com-aterramento-duplo-original",
+   "name": "Cordoalhas Veículos Leves – Com Aterramento Duplo – Original",
+   "category": "cordoalhas",
+   "group": "Linha Leve",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "34046",
+     "45cm",
+     "Passat, Voyage e Parati"
+    ],
+    [
+     "34051",
+     "52cm",
+     "Gol, Santana, Voyage, Parati, Apolo (após 1988)"
+    ],
+    [
+     "34053",
+     "55cm",
+     "Pampa 1.8, Belina, Del Rey 1.8 (Motor Ap-VW)"
+    ],
+    [
+     "34071",
+     "70cm",
+     "Santana (modelo novo)"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cordoalhas-veiculos-leves-com-aterramento-duplo-original/",
+   "images": [
+    "/produtos/cordoalhas-veiculos-leves-com-aterramento-duplo-original-1.webp"
+   ]
+  },
+  {
+   "slug": "cordoalhas-veiculos-leves-duas-ponteiras",
+   "name": "Cordoalhas Veículos Leves – Duas Ponteiras",
+   "category": "cordoalhas",
+   "group": "Linha Leve",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "35020",
+     "20cm",
+     "Utilizado em todos os veículos leves para fazer conexão e o terra"
+    ],
+    [
+     "35025",
+     "25cm",
+     "Utilizado em todos os veículos leves para fazer conexão e o terra"
+    ],
+    [
+     "35030",
+     "30cm",
+     "Utilizado em todos os veículos leves para fazer conexão e o terra"
+    ],
+    [
+     "35040",
+     "40cm",
+     "Utilizado em todos os veículos leves para fazer conexão e o terra"
+    ],
+    [
+     "35050",
+     "50cm",
+     "Utilizado em todos os veículos leves para fazer conexão e o terra"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cordoalhas-veiculos-leves-duas-ponteiras/",
+   "images": [
+    "/produtos/cordoalhas-veiculos-leves-duas-ponteiras-1.webp"
+   ]
+  },
+  {
+   "slug": "cordoalhas-veiculos-pesados-1-terminal-e-1-ponteira",
+   "name": "Cordoalhas Veículos Pesados – 1 Terminal e 1 Ponteira",
+   "category": "cordoalhas",
+   "group": "Linha Pesada",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "36030",
+     "30cm",
+     "Cam, Volks Medio\ne Leve. TR. M.\nFergussom"
+    ],
+    [
+     "36040",
+     "40cm",
+     "Mercedes Benz L,\nLK, LS1313/ L1316/ L2213,\nTrator CBT 1000/ 1065/ 2070/\n2080 / 2500/ 2600"
+    ],
+    [
+     "36045",
+     "45cm",
+     "Mercedes Benz L 608-D/L 1513 L 1519/ Ls1519"
+    ],
+    [
+     "36050",
+     "50cm",
+     "Mercedes Benz L1214/1625/1924/1932/1313/\n1513/1516/1625 -\nScania Modelos R e H, Ford 11000,\nVolvo - Trator Valmet 360/ 60/ 62/ 65/ 80/ 85/\n110-ID - Trator CBT 8060,\nCBT 1020/ 1090/ 1105/ 2100/ 2400"
+    ],
+    [
+     "36060",
+     "60cm",
+     "Caminhonete, Chevrolet\nD-60 e D-11000"
+    ],
+    [
+     "36070",
+     "70cm",
+     "Trator Valmet\n118/88/6B/68\n\nCafeeiro"
+    ],
+    [
+     "36080",
+     "80cm",
+     "Mercedes Benz 1214"
+    ],
+    [
+     "36090",
+     "90cm",
+     "-"
+    ],
+    [
+     "36100",
+     "100cm",
+     "-"
+    ],
+    [
+     "36130",
+     "130cm",
+     "Trator Ford 4600 e 6600"
+    ],
+    [
+     "36140",
+     "140cm",
+     "Caminhonete, Cargo (01 Bateria), Mercedes Benz 1113/1116/LA 1113"
+    ],
+    [
+     "36150",
+     "150cm",
+     "Mercedes Benz D-608"
+    ],
+    [
+     "36160",
+     "160cm",
+     "Caminhonete, Volks Pesados"
+    ],
+    [
+     "36210",
+     "210cm",
+     "Volvo (até 1989)"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cordoalhas-veiculos-pesados-1-terminal-e-1-ponteira/",
+   "images": [
+    "/produtos/cordoalhas-veiculos-pesados-1-terminal-e-1-ponteira-1.webp"
+   ]
+  },
+  {
+   "slug": "cordoalhas-veiculos-pesados-duas-ponteiras",
+   "name": "Cordoalhas Veículos Pesados – Duas Ponteiras",
+   "category": "cordoalhas",
+   "group": "Linha Pesada",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "37030",
+     "30cm",
+     "Utilizado caminhões, ônibus, tratores, máquinas e implementos agrícolas para fazer conexão e o terra"
+    ],
+    [
+     "37040",
+     "40cm",
+     "Utilizado caminhões, ônibus, tratores, máquinas e implementos agrícolas para fazer conexão e o terra"
+    ],
+    [
+     "37050",
+     "50cm",
+     "Utilizado caminhões, ônibus, tratores, máquinas e implementos agrícolas para fazer conexão e o terra"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cordoalhas-veiculos-pesados-duas-ponteiras/",
+   "images": [
+    "/produtos/cordoalhas-veiculos-pesados-duas-ponteiras-1.webp"
+   ]
+  },
+  {
+   "slug": "barra-de-ligacao",
+   "name": "Barra de Ligação",
+   "category": "cordoalhas",
+   "group": "Linha Pesada",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "38060",
+     "60mm",
+     "Motor de partida Passat, Gol, Voyage e Saveiro"
+    ],
+    [
+     "38200",
+     "200mm",
+     "Santana, Kombi Diesel, Caminhão Volkswagen"
+    ],
+    [
+     "38300",
+     "300mm",
+     "Uso geral para fazer o terra em veículos leves"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/barra-de-ligacao/",
+   "images": [
+    "/produtos/barra-de-ligacao-1.webp"
+   ]
+  },
+  {
+   "slug": "cordoalhas-para-bateria-em-metro",
+   "name": "Cordoalhas para Bateria em Metro",
+   "category": "cordoalhas",
+   "group": "Cordoalhas",
+   "application": [],
+   "columns": [
+    "Código",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "86001",
+     "Cordoalha trançada Chata Nua 3/4” (30 AWG)"
+    ],
+    [
+     "86002",
+     "Cordoalha trançada Chata Estanhada 1” (30 AWG)"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cordoalhas-para-bateria-em-metro/",
+   "images": [
+    "/produtos/cordoalhas-para-bateria-em-metro-1.webp"
+   ]
+  },
+  {
+   "slug": "cabos-de-bateria-veiculos-leve-universal-positivo",
+   "name": "Cabos de Bateria Veículos Leve Universal – Positivo",
+   "category": "cabos-para-bateria",
+   "group": "Linha Leve",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Ano",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "41050",
+     "50cm",
+     "Todos",
+     "Corcel II, Belina, Del Rey e Gurgel"
+    ],
+    [
+     "41060",
+     "60cm",
+     "Todos",
+     "Fiat 147, Prêmio, Spazio, Uno"
+    ],
+    [
+     "41070",
+     "70cm",
+     "69 à 77\nApós 80\nApós 73\nTodos",
+     "Corcel e Belina\nOpala, Caravan e Comodoro\nChevette\nMaverick"
+    ],
+    [
+     "41080",
+     "80cm",
+     "Após 11/72\nTodos\nApós 82\n68 à 11/75",
+     "Variant I e II , TL\nPassat\nMonza\nKombi"
+    ],
+    [
+     "41090",
+     "90cm",
+     "Todos",
+     "Agrale 1600-D"
+    ],
+    [
+     "41100",
+     "100cm",
+     "Todos",
+     "Gol, Saveiro, Parati, Santana, Voyage"
+    ],
+    [
+     "41110",
+     "100cm",
+     "Todos",
+     "F 1000 e D20 (com 1 bateria), Lada, Agrale 1800-D"
+    ],
+    [
+     "41115",
+     "115cm",
+     "Após 83\nTodos",
+     "Ford Escort\nGalaxie"
+    ],
+    [
+     "41120",
+     "120cm",
+     "Após 76\nTodos\n71 à 78",
+     "Veraneio, C 10 (4 cilindros)\nBrasília, Pick-up A 60 / C 10 / C 60\n(6 cilindros)\nFord F 600 (gasolina)"
+    ],
+    [
+     "41150",
+     "150cm",
+     "-",
+     "Escort, Verona, Logus, Pointer, Apollo\n(todos com motor AP)"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabos-de-bateria-veiculos-leve-universal-positivo/",
+   "images": [
+    "/produtos/cabos-de-bateria-veiculos-leve-universal-positivo-1.webp"
+   ]
+  },
+  {
+   "slug": "cabos-de-bateria-veiculos-leve-universal-negativo",
+   "name": "Cabos de Bateria Veículos Leve Universal – Negativo",
+   "category": "cabos-para-bateria",
+   "group": "Linha Leve",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Ano",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "43020",
+     "20cm",
+     "69 a 77\nTodos",
+     "Corcel , Belina\nOpala, Caravan, Chevette"
+    ],
+    [
+     "43025",
+     "25cm",
+     "Todos",
+     "Lada, Laika, Samara, Niva"
+    ],
+    [
+     "43030",
+     "30cm",
+     "Após 75",
+     "A-60, C-10, D-10, C-60 (todos os cilindros)"
+    ],
+    [
+     "43035",
+     "35cm",
+     "Todos",
+     "Belina, Corcel II, Del Rey"
+    ],
+    [
+     "43045",
+     "45cm",
+     "Todos",
+     "Fiat 147, Fiorino, Panorama Spazio,\nOggi, Fiat Uno, Prêmio, Elba"
+    ],
+    [
+     "43050",
+     "50cm",
+     "64 a 74",
+     "Veraneio, C-10, C-60"
+    ],
+    [
+     "43060",
+     "60cm",
+     "64 a 74",
+     "Veraneio, C-10, C-60"
+    ],
+    [
+     "43070",
+     "70cm",
+     "Todos",
+     "Galaxie"
+    ],
+    [
+     "43100",
+     "100cm",
+     "-",
+     "Escort até 96 e Hobby"
+    ],
+    [
+     "13110",
+     "110cm",
+     "-",
+     "F-1000 e D-20 (com 1 bateria)"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabos-de-bateria-veiculos-leve-universal-negativo/",
+   "images": [
+    "/produtos/cabos-de-bateria-veiculos-leve-universal-negativo-1.webp"
+   ]
+  },
+  {
+   "slug": "cabos-para-bateria-veiculos-leve-2-ponteiras",
+   "name": "Cabos para Bateria Veículos Leve – 2 Ponteiras",
+   "category": "cabos-para-bateria",
+   "group": "Linha Leve",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "44020",
+     "20cm",
+     "Utilizado em todos os veículos leves\npara fazer conexão e o terra"
+    ],
+    [
+     "44030",
+     "30cm",
+     "Utilizado em todos os veículos leves\npara fazer conexão e o terra"
+    ],
+    [
+     "44040",
+     "40cm",
+     "Utilizado em todos os veículos leves\npara fazer conexão e o terra"
+    ],
+    [
+     "44050",
+     "50cm",
+     "Utilizado em todos os veículos leves\npara fazer conexão e o terra"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabos-para-bateria-veiculos-leve-2-ponteiras/",
+   "images": [
+    "/produtos/cabos-para-bateria-veiculos-leve-2-ponteiras-1.webp"
+   ]
+  },
+  {
+   "slug": "cabos-positivo-com-rabicho-original",
+   "name": "Cabos Positivo com Rabicho Original",
+   "category": "cabos-para-bateria",
+   "group": "Linha Leve",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Nº original",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "45070",
+     "67cm",
+     "-",
+     "Uno LX (com rabicho de 70 cm)"
+    ],
+    [
+     "45080",
+     "80cm",
+     "-",
+     "Fusca, Kombi, Variant, TL\n(com rabicho de 40 cm)"
+    ],
+    [
+     "45081",
+     "80cm",
+     "-",
+     "Passat (com rabicho de 65 cm)"
+    ],
+    [
+     "45100",
+     "100cm",
+     "ZBA.971.225-C",
+     "Voyage, Parati\n(antigos com rabicho de 2,15 mt)"
+    ],
+    [
+     "45101",
+     "100cm",
+     "113.971.225-7",
+     "Kombi Cliper (com rabicho de 55 cm)"
+    ],
+    [
+     "45102",
+     "100cm",
+     "ZBA.971.225-A",
+     "Santana (modelo antigo com rabicho de 15 cm)"
+    ],
+    [
+     "45120",
+     "120cm",
+     "231.971.225-2",
+     "Brasília com Dínamo (com rabicho de 15 cm)"
+    ],
+    [
+     "45121",
+     "120cm",
+     "-",
+     "Santana, Parati\n(mod. novo com rabicho de 60 cm)"
+    ],
+    [
+     "45122",
+     "120cm",
+     "-",
+     "Monza (com rabicho de 30 cm)"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabos-positivo-com-rabicho-original/",
+   "images": [
+    "/produtos/cabos-positivo-com-rabicho-original-1.webp"
+   ]
+  },
+  {
+   "slug": "cabos-positivo-sem-rabicho-original",
+   "name": "Cabos Positivo sem Rabicho Original",
+   "category": "cabos-para-bateria",
+   "group": "Linha Leve",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Nº original",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "46080",
+     "80cm",
+     "305.971.225-2",
+     "Gol motor CHT"
+    ],
+    [
+     "46081",
+     "80cm",
+     "113.971.225-7",
+     "Fusca e Kombi (com alternador)"
+    ],
+    [
+     "46100",
+     "100cm",
+     "305.971.225-5",
+     "Gol, Voyage, Santana, Parati, Saveiro\n(geração 2, 3, 4)"
+    ],
+    [
+     "46120",
+     "120cm",
+     "-",
+     "Corsa e Gol (até 1994)"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabos-positivo-sem-rabicho-original/",
+   "images": [
+    "/produtos/cabos-positivo-sem-rabicho-original-1.webp"
+   ]
+  },
+  {
+   "slug": "cabos-negativo-com-rabicho-original",
+   "name": "Cabos Negativo com Rabicho Original",
+   "category": "cabos-para-bateria",
+   "group": "Linha Leve",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "47070",
+     "70cm",
+     "Gol, Bola negativo (com rabicho de 30 cm)"
+    ],
+    [
+     "47120",
+     "120cm",
+     "Corsa (com rabicho de 16 cm)"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabos-negativo-com-rabicho-original/",
+   "images": [
+    "/produtos/cabos-negativo-com-rabicho-original-1.webp"
+   ]
+  },
+  {
+   "slug": "cabo-auxiliar-do-alternador-para-motor-de-arranque",
+   "name": "Cabo Auxiliar do Alternador para Motor de Arranque",
+   "category": "cabos-para-bateria",
+   "group": "Linha Leve",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "48090",
+     "90cm",
+     "Palio e Gol"
+    ],
+    [
+     "18110",
+     "110cm",
+     "Escort Zetec sem Ar (com rabicho de 120 cm)"
+    ],
+    [
+     "48130",
+     "130cm",
+     "Escort Zetec com Ar (com rabicho de 120 cm)"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabo-auxiliar-do-alternador-para-motor-de-arranque/",
+   "images": [
+    "/produtos/cabo-auxiliar-do-alternador-para-motor-de-arranque-1.webp"
+   ]
+  },
+  {
+   "slug": "cabo-especial-para-2-baterias",
+   "name": "Cabo Especial para 2 Baterias",
+   "category": "cabos-para-bateria",
+   "group": "Linha Pesada",
+   "application": [],
+   "columns": [
+    "Código",
+    "Medidas",
+    "Tipo",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "49270",
+     "270cm",
+     "Positivo",
+     "Pick-up F-1000 e D-20"
+    ],
+    [
+     "49271",
+     "270cm",
+     "Negativo",
+     "Pick-up F-1000 e D-20"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabo-especial-para-2-baterias/",
+   "images": [
+    "/produtos/cabo-especial-para-2-baterias-1.webp"
+   ]
+  },
+  {
+   "slug": "cabos-para-baterias-em-metros",
+   "name": "Cabos para Baterias em Metros",
+   "category": "cabos-para-bateria",
+   "group": "Cabos para Bateria",
+   "application": [],
+   "columns": [
+    "Código",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "85001",
+     "Cabo de 16mm2"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabos-para-baterias-em-metros/",
+   "images": [
+    "/produtos/cabos-para-baterias-em-metros-1.webp"
+   ]
+  },
+  {
+   "slug": "parafuso-com-porca-para-terminal-de-bateria",
+   "name": "Parafuso com Porca para Terminal de Bateria",
+   "category": "cabos-para-bateria",
+   "group": "Cabos para Bateria",
+   "application": [
+    "Parafuso com porta com Acabamento de Zinco Bicromatizado"
+   ],
+   "columns": [
+    "Código",
+    "Medida"
+   ],
+   "rows": [
+    [
+     "87001",
+     "Medida: 25,40 x 6,25 mm\n(1” x 1/4”)"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/parafuso-com-porca-para-terminal-de-bateria/",
+   "images": [
+    "/produtos/parafuso-com-porca-para-terminal-de-bateria-1.webp"
+   ]
+  },
+  {
+   "slug": "terminais-de-bateria-3-vias",
+   "name": "Terminais de Bateria – 3 Vias",
+   "category": "terminais-e-ponteiras",
+   "group": "Terminais e Ponteiras",
+   "application": [
+    "Terminal de Bateria 3 Vias"
+   ],
+   "columns": [
+    "Código",
+    "DESCRIÇÃO"
+   ],
+   "rows": [
+    [
+     "65020",
+     "Terminal de Bateria 3 vias - Positivo"
+    ],
+    [
+     "65021",
+     "Terminal de Bateria 3 vias - Negativo"
+    ],
+    [
+     "65022",
+     "Terminal de Bateria 3 vias com Engate Rápido - Positivo"
+    ],
+    [
+     "65023",
+     "Terminal de Bateria 3 vias com Engate Rápido - Negativo"
+    ],
+    [
+     "65024",
+     "Kit Terminal de Bateria 3 vias com Engate Rápido - Positivo + Negativo"
+    ],
+    [
+     "65025",
+     "Kit Terminal de Bateria 3 vias - Positivo + Negativo"
+    ]
+   ],
+   "launch": true,
+   "source": "https://amscomponentes.com.br/produto/terminais-de-bateria-3-vias/",
+   "images": [
+    "/produtos/terminais-de-bateria-3-vias-1.webp",
+    "/produtos/terminais-de-bateria-3-vias-2.webp",
+    "/produtos/terminais-de-bateria-3-vias-3.webp",
+    "/produtos/terminais-de-bateria-3-vias-4.webp",
+    "/produtos/terminais-de-bateria-3-vias-5.webp",
+    "/produtos/terminais-de-bateria-3-vias-6.webp"
+   ]
+  },
+  {
+   "slug": "terminal-de-fio",
+   "name": "Terminais de Fio",
+   "category": "terminais-e-ponteiras",
+   "group": "Terminais e Ponteiras",
+   "application": [],
+   "columns": [
+    "Código",
+    "Aplicação"
+   ],
+   "rows": [
+    [
+     "81010",
+     "Terminal Fêmea com Trava 4,8 mm"
+    ],
+    [
+     "81011",
+     "Terminal Hermafrodita 6,3 mm"
+    ],
+    [
+     "81012",
+     "Terminal Bandeira sem Trava 7,2 mm(Farol de Veiculos)"
+    ],
+    [
+     "81013",
+     "Terminal Bandeira sem Trava 4,8 mm"
+    ],
+    [
+     "81014",
+     "Terminal Fêmea sem Trava 2,8 mm Mosquitinho"
+    ],
+    [
+     "81015",
+     "Terminal Fêmea com Trava 2,8mm Mosquitinho"
+    ],
+    [
+     "81016",
+     "Terminal Bandeira sem Trava 6,3 mm"
+    ],
+    [
+     "81017",
+     "Terminal Olhal 1/8” (Espessura 0,52 mm)"
+    ],
+    [
+     "81018",
+     "Terminal Olhal 5/32” (Espessura 0,52 mm)"
+    ],
+    [
+     "81019",
+     "Terminal Macho sem Trava 2,8 mm Espadinha"
+    ],
+    [
+     "81020",
+     "Terminal Fêmea sem Trava 9,7 mm"
+    ],
+    [
+     "81021",
+     "Terminal Garfo 3/16” (Espessura 0,52 mm)"
+    ],
+    [
+     "81022",
+     "Terminal Garfo 1/4” (Espessura 0,75 mm)"
+    ],
+    [
+     "81023",
+     "Terminal Macho Curto 6,3 mm sem Trava"
+    ],
+    [
+     "81024",
+     "Terminal Macho Longo 6,3 mm com Trava"
+    ],
+    [
+     "81025",
+     "Terminal Olhal 3/16” (Espessura 0,38 mm)"
+    ],
+    [
+     "81026",
+     "Terminal Olhal 3/16” (Espessura 0,50 mm)"
+    ],
+    [
+     "81027",
+     "Terminal Olhal 5/16” (Espessura 0,50 mm)"
+    ],
+    [
+     "81028",
+     "Terminal Olhal 1/4” (Espessura 0,50 mm)"
+    ],
+    [
+     "81029",
+     "Terminal Olhal 1/4” (Espessura 0,38 mm)"
+    ],
+    [
+     "81030",
+     "Terminal Olhal 3/8” (Espessura 0,60 mm)"
+    ],
+    [
+     "81031",
+     "Terminal Fêmea sem Trava 6,3 mm"
+    ],
+    [
+     "81032",
+     "Terminal Fêmea com Trava 6,3 mm"
+    ]
+   ],
+   "launch": true,
+   "source": "https://amscomponentes.com.br/terminal-de-fio/",
+   "images": [
+    "/produtos/terminal-de-fio-1.webp",
+    "/produtos/terminal-de-fio-2.webp",
+    "/produtos/terminal-de-fio-3.webp",
+    "/produtos/terminal-de-fio-4.webp",
+    "/produtos/terminal-de-fio-5.webp",
+    "/produtos/terminal-de-fio-6.webp",
+    "/produtos/terminal-de-fio-7.webp",
+    "/produtos/terminal-de-fio-8.webp",
+    "/produtos/terminal-de-fio-9.webp",
+    "/produtos/terminal-de-fio-10.webp",
+    "/produtos/terminal-de-fio-11.webp",
+    "/produtos/terminal-de-fio-12.webp",
+    "/produtos/terminal-de-fio-13.webp",
+    "/produtos/terminal-de-fio-14.webp"
+   ]
+  },
+  {
+   "slug": "ponteiras-para-bateria",
+   "name": "Ponteiras para Bateria",
+   "category": "terminais-e-ponteiras",
+   "group": "Terminais e Ponteiras",
+   "application": [],
+   "columns": [
+    "Código",
+    "CABO",
+    "PARAFUSO"
+   ],
+   "rows": [
+    [
+     "65005",
+     "até 16mm",
+     "1 Parafuso 1/4 x 5/8”"
+    ],
+    [
+     "65006",
+     "de 25mm à 35mm",
+     "1 Parafuso 1/4 x 5/8”"
+    ],
+    [
+     "65007",
+     "50mm",
+     "1 Parafuso 5/16” x 5/8”"
+    ],
+    [
+     "65008",
+     "70mm",
+     "1 Parafuso 5/16” x 3/4”"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/ponteiras-para-bateria/",
+   "images": [
+    "/produtos/ponteiras-para-bateria-1.webp",
+    "/produtos/ponteiras-para-bateria-2.webp",
+    "/produtos/ponteiras-para-bateria-3.webp",
+    "/produtos/ponteiras-para-bateria-4.webp"
+   ]
+  },
+  {
+   "slug": "terminal-tipo-sapinho",
+   "name": "Terminal Tipo Sapinho",
+   "category": "terminais-e-ponteiras",
+   "group": "Terminais para Cabos de Bateria",
+   "application": [
+    "Terminal Negativo Sapinho para cabos até 35mm",
+    "2 Parafusos 1/4 x 3/4” Sextavados",
+    "1 Parafuso 1/4 x 1” Cab. Quadrada"
+   ],
+   "columns": [
+    "Código",
+    "Modelo"
+   ],
+   "rows": [
+    [
+     "65004",
+     "Positivo"
+    ],
+    [
+     "65002",
+     "Negativo"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/terminal-tipo-sapinho/",
+   "images": [
+    "/produtos/terminal-tipo-sapinho-1.webp",
+    "/produtos/terminal-tipo-sapinho-2.webp"
+   ]
+  },
+  {
+   "slug": "terminal-tipo-sapao",
+   "name": "Terminal Tipo Sapão",
+   "category": "terminais-e-ponteiras",
+   "group": "Terminais para Cabos de Bateria",
+   "application": [
+    "Terminal Sapão para cabos até 70mm",
+    "2 Parafusos 1/4 x 3/4” Sextavados",
+    "1 Parafuso 5/16 x 1. 1/4” Cab. Quadrada"
+   ],
+   "columns": [
+    "Código",
+    "Modelo"
+   ],
+   "rows": [
+    [
+     "65001",
+     "Positivo"
+    ],
+    [
+     "65003",
+     "Negativo"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/terminal-tipo-sapao/",
+   "images": [
+    "/produtos/terminal-tipo-sapao-1.webp",
+    "/produtos/terminal-tipo-sapao-2.webp"
+   ]
+  },
+  {
+   "slug": "cabo-de-transferencia-veiculos-leve-ate-100-ampers",
+   "name": "Cabo de Transferência Veículos Leve – Até 100 Amperes",
+   "category": "cabos-de-transferencia",
+   "group": "Cabos de Transferência de Carga",
+   "application": [
+    "Cabo Booster amarelo",
+    "Garra multiuso jacaré média"
+   ],
+   "columns": [
+    "Código",
+    "Medidas",
+    "PROTEÇÃO",
+    "EMGALAGEM"
+   ],
+   "rows": [
+    [
+     "70180",
+     "1.80 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "70250",
+     "2.50 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "70300",
+     "3.00 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabo-de-transferencia-veiculos-leve-ate-100-ampers/",
+   "images": [
+    "/produtos/cabo-de-transferencia-veiculos-leve-ate-100-ampers-1.webp"
+   ]
+  },
+  {
+   "slug": "cabo-de-transferencia-veiculos-medios-ate-200-amperes",
+   "name": "Cabo de Transferência Veículos Médios – Até 200 Amperes",
+   "category": "cabos-de-transferencia",
+   "group": "Cabos de Transferência de Carga",
+   "application": [
+    "Cabo 6,0 mm²",
+    "vermelho (+) e preto (-)",
+    "Garra reforçada média"
+   ],
+   "columns": [
+    "Código",
+    "Medidas",
+    "PROTEÇÃO",
+    "EMGALAGEM"
+   ],
+   "rows": [
+    [
+     "72180",
+     "1.80 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "72181",
+     "1.80 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "72182",
+     "1.80 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "72183",
+     "1.80 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "72250",
+     "2.50 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "72251",
+     "2.50 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "72252",
+     "2.50 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "72253",
+     "2.50 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "72300",
+     "3.00 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "72301",
+     "3.00 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "72302",
+     "3.00 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "72303",
+     "3.00 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "72350",
+     "3.50 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "72351",
+     "3.50 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "72352",
+     "3.50 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "72353",
+     "3.50 mts",
+     "Manopla",
+     "Bolsa"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabo-de-transferencia-veiculos-medios-ate-200-amperes/",
+   "images": [
+    "/produtos/cabo-de-transferencia-veiculos-medios-ate-200-amperes-1.webp",
+    "/produtos/cabo-de-transferencia-veiculos-medios-ate-200-amperes-2.webp"
+   ]
+  },
+  {
+   "slug": "cabo-de-transferencia-veiculos-semi-pesados-ate-600-amperes",
+   "name": "Cabo de Transferência Veículos Semi Pesados – Até 600 Amperes",
+   "category": "cabos-de-transferencia",
+   "group": "Cabos de Transferência de Carga",
+   "application": [
+    "Cabo 10,0 mm²",
+    "vermelho (+) e preto (-)",
+    "Garra reforçada média"
+   ],
+   "columns": [
+    "Código",
+    "Medidas",
+    "PROTEÇÃO",
+    "EMGALAGEM"
+   ],
+   "rows": [
+    [
+     "73180",
+     "1.80 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "73181",
+     "1.80 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "73182",
+     "1.80 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "73183",
+     "1.80 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "73250",
+     "2.50 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "73251",
+     "2.50 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "73252",
+     "2.50 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "73253",
+     "2.50 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "73300",
+     "3.00 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "73301",
+     "3.00 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "73302",
+     "3.00 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "73303",
+     "3.00 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "73350",
+     "3.50 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "73351",
+     "3.50 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "73352",
+     "3.50 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "73353",
+     "3.50 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "73400",
+     "4.00 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "73401",
+     "4.00 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "73402",
+     "4.00 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "73403",
+     "4.00 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "73500",
+     "5.00 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "73501",
+     "5.00 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "73502",
+     "5.00 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "73503",
+     "5.00 mts",
+     "Manopla",
+     "Bolsa"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabo-de-transferencia-veiculos-semi-pesados-ate-600-amperes/",
+   "images": [
+    "/produtos/cabo-de-transferencia-veiculos-semi-pesados-ate-600-amperes-1.webp",
+    "/produtos/cabo-de-transferencia-veiculos-semi-pesados-ate-600-amperes-2.webp"
+   ]
+  },
+  {
+   "slug": "cabo-de-transferencia-veiculos-pesados-ate-800-amperes",
+   "name": "Cabo de Transferência Veículos Pesados – Até 800 Amperes",
+   "category": "cabos-de-transferencia",
+   "group": "Cabos de Transferência de Carga",
+   "application": [
+    "Cabo 16,0 mm²",
+    "vermelho (+) e preto (-)",
+    "Garra reforçada grande"
+   ],
+   "columns": [
+    "Código",
+    "Medidas",
+    "PROTEÇÃO",
+    "EMGALAGEM"
+   ],
+   "rows": [
+    [
+     "74250",
+     "2.50 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "74251",
+     "2.50 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "74252",
+     "2.50 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "74253",
+     "2.50 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "74300",
+     "3.00 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "74301",
+     "3.00 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "74302",
+     "3.00 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "74303",
+     "3.00 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "74350",
+     "3.50 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "74351",
+     "3.50 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "74352",
+     "3.50 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "74353",
+     "3.50 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "74400",
+     "4.00 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "74401",
+     "4.00 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "74402",
+     "4.00 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "74403",
+     "4.00 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "74500",
+     "5.00 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "74501",
+     "5.00 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "74502",
+     "5.00 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "74503",
+     "5.00 mts",
+     "Manopla",
+     "Bolsa"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabo-de-transferencia-veiculos-pesados-ate-800-amperes/",
+   "images": [
+    "/produtos/cabo-de-transferencia-veiculos-pesados-ate-800-amperes-1.webp",
+    "/produtos/cabo-de-transferencia-veiculos-pesados-ate-800-amperes-2.webp"
+   ]
+  },
+  {
+   "slug": "cabo-de-transferencia-extrapesados",
+   "name": "Cabo de Transferência Extrapesados",
+   "category": "cabos-de-transferencia",
+   "group": "Cabos de Transferência de Carga",
+   "application": [
+    "Cabo 25,0 mm²",
+    "vermelho (+) e preto (-)",
+    "Garra reforçada grande"
+   ],
+   "columns": [
+    "Código",
+    "Medidas",
+    "PROTEÇÃO",
+    "EMGALAGEM"
+   ],
+   "rows": [
+    [
+     "75250",
+     "2.50 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "75251",
+     "2.50 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "75252",
+     "2.50 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "75253",
+     "2.50 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "75300",
+     "3.00 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "75301",
+     "3.00 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "75302",
+     "3.00 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "75303",
+     "3.00 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "75350",
+     "3.50 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "75351",
+     "3.50 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "75352",
+     "3.50 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "75353",
+     "3.50 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "75400",
+     "4.00 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "75401",
+     "4.00 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "75402",
+     "4.00 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "75403",
+     "4.00 mts",
+     "Manopla",
+     "Bolsa"
+    ],
+    [
+     "75500",
+     "5.00 mts",
+     "Espaguete",
+     "Saco Plástico"
+    ],
+    [
+     "75501",
+     "5.00 mts",
+     "Manopla",
+     "Saco Plástico"
+    ],
+    [
+     "75502",
+     "5.00 mts",
+     "Espaguete",
+     "Bolsa"
+    ],
+    [
+     "75503",
+     "5.00 mts",
+     "Manopla",
+     "Bolsa"
+    ]
+   ],
+   "launch": false,
+   "source": "https://amscomponentes.com.br/produto/cabo-de-transferencia-extrapesados/",
+   "images": [
+    "/produtos/cabo-de-transferencia-extrapesados-1.webp",
+    "/produtos/cabo-de-transferencia-extrapesados-2.webp"
+   ]
+  },
+  {
+   "slug": "garras-multiuso-jacare",
+   "name": "Garras Multiuso – Jacaré",
+   "category": "garras-e-manoplas",
+   "group": "Garras e Manoplas",
+   "application": [],
+   "columns": [
+    "Código",
+    "AMP",
+    "DESCRIÇÃO"
+   ],
+   "rows": [
+    [
+     "79100",
+     "50",
+     "Garra multiuso pequena com espaguete vermelho (+)"
+    ],
+    [
+     "79101",
+     "50",
+     "Garra multiuso pequena com espaguete preto (-)"
+    ],
+    [
+     "79102",
+     "200",
+     "Garra multiuso média com espaguete vermelho (+)"
+    ],
+    [
+     "79103",
+     "200",
+     "Garra multiuso média com espaguete preto (-)"
+    ],
+    [
+     "79104",
+     "300",
+     "Garra multiuso grande com espaguete vermelho (+)"
+    ],
+    [
+     "79105",
+     "300",
+     "Garra multiuso grande com espaguete preto (-)"
+    ],
+    [
+     "79106",
+     "50",
+     "Par de Garras peq. c/ espaguete verm.(+) e preto (-)"
+    ],
+    [
+     "79107",
+     "200",
+     "Par de Garras média. c/ espaguete verm.(+) e preto (-)"
+    ],
+    [
+     "79108",
+     "300",
+     "Par de Garras grande c/ espaguete verm.(+) e preto (-)"
+    ]
+   ],
+   "launch": true,
+   "source": "https://amscomponentes.com.br/produto/garras-multiuso-jacare/",
+   "images": [
+    "/produtos/garras-multiuso-jacare-1.webp",
+    "/produtos/garras-multiuso-jacare-2.webp",
+    "/produtos/garras-multiuso-jacare-3.webp",
+    "/produtos/garras-multiuso-jacare-4.webp"
+   ]
+  },
+  {
+   "slug": "garras-reforcada-alicatao",
+   "name": "Garras Reforçada Alicatão",
+   "category": "garras-e-manoplas",
+   "group": "Garras e Manoplas",
+   "application": [],
+   "columns": [
+    "Código",
+    "AMP",
+    "DESCRIÇÃO"
+   ],
+   "rows": [
+    [
+     "79200",
+     "300",
+     "Garra reforçada média com espaguete vermelho (+)"
+    ],
+    [
+     "79201",
+     "300",
+     "Garra reforçada média com espaguete preto (-)"
+    ],
+    [
+     "79202",
+     "300",
+     "Garra reforçada média com manopla vermelha (+)"
+    ],
+    [
+     "79203",
+     "300",
+     "Garra reforçada média com manopla preta (-)"
+    ],
+    [
+     "79204",
+     "500",
+     "Garra reforçada grande com espaguete vermelho (+)"
+    ],
+    [
+     "79205",
+     "500",
+     "Garra reforçada grande com espaguete preto (-)"
+    ],
+    [
+     "79206",
+     "500",
+     "Garra reforçada grande com manopla vermelha (+)"
+    ],
+    [
+     "79207",
+     "500",
+     "Garra reforçada grande com manopla preta (-)"
+    ],
+    [
+     "79208",
+     "300",
+     "Par Garra média Ref. c/ espaguete verm. (+) e preto (-)"
+    ],
+    [
+     "79209",
+     "300",
+     "Par Garra média Ref. c/ manopla verm. (+) e preta (-)"
+    ],
+    [
+     "79210",
+     "500",
+     "Par Garra gr. Ref. c/ espaguete verm. (+) e preto (-)"
+    ],
+    [
+     "79211",
+     "500",
+     "Par Garra gr. Ref. c/ manopla verm. (+) e preta (-)"
+    ]
+   ],
+   "launch": true,
+   "source": "https://amscomponentes.com.br/produto/garras-reforcada-alicatao/",
+   "images": [
+    "/produtos/garras-reforcada-alicatao-1.webp",
+    "/produtos/garras-reforcada-alicatao-2.webp",
+    "/produtos/garras-reforcada-alicatao-3.webp",
+    "/produtos/garras-reforcada-alicatao-4.webp"
+   ]
+  },
+  {
+   "slug": "garras-multiuso-com-parafuso",
+   "name": "Garras Multiuso com parafuso",
+   "category": "garras-e-manoplas",
+   "group": "Garras e Manoplas",
+   "application": [],
+   "columns": [
+    "Código",
+    "AMP",
+    "DESCRIÇÃO"
+   ],
+   "rows": [
+    [
+     "79300",
+     "30",
+     "Garra multiuso com parafuso pequena"
+    ],
+    [
+     "79301",
+     "50",
+     "Garra multiuso com parafuso média"
+    ],
+    [
+     "79302",
+     "100",
+     "Garra multiuso com parafuso grande"
+    ]
+   ],
+   "launch": true,
+   "source": "https://amscomponentes.com.br/produto/garras-multiuso-com-parafuso/",
+   "images": [
+    "/produtos/garras-multiuso-com-parafuso-1.webp",
+    "/produtos/garras-multiuso-com-parafuso-2.webp",
+    "/produtos/garras-multiuso-com-parafuso-3.webp"
+   ]
+  },
+  {
+   "slug": "garras-com-mola",
+   "name": "Garras com Mola",
+   "category": "garras-e-manoplas",
+   "group": "Garras e Manoplas",
+   "application": [],
+   "columns": [
+    "Código",
+    "AMP",
+    "DESCRIÇÃO"
+   ],
+   "rows": [
+    [
+     "79400",
+     "30",
+     "Garra com mola pequena"
+    ],
+    [
+     "79401",
+     "50",
+     "Garra com mola média"
+    ],
+    [
+     "79402",
+     "100",
+     "Garra com mola grande"
+    ]
+   ],
+   "launch": true,
+   "source": "https://amscomponentes.com.br/produto/garras-com-mola/",
+   "images": [
+    "/produtos/garras-com-mola-1.webp",
+    "/produtos/garras-com-mola-2.webp",
+    "/produtos/garras-com-mola-3.webp"
+   ]
+  },
+  {
+   "slug": "manoplas",
+   "name": "Manoplas",
+   "category": "garras-e-manoplas",
+   "group": "Garras e Manoplas",
+   "application": [],
+   "columns": [
+    "Código",
+    "DESCRIÇÃO"
+   ],
+   "rows": [
+    [
+     "79700",
+     "Manopla garra bateria média vermelha"
+    ],
+    [
+     "79701",
+     "Manopla garra bateria média preta"
+    ],
+    [
+     "79702",
+     "Manopla garra bateria grande vermelha"
+    ],
+    [
+     "79703",
+     "Manopla garra bateria grande preta"
+    ]
+   ],
+   "launch": true,
+   "source": "https://amscomponentes.com.br/produto/manoplas/",
+   "images": [
+    "/produtos/manoplas-1.webp",
+    "/produtos/manoplas-2.webp",
+    "/produtos/manoplas-3.webp",
+    "/produtos/manoplas-4.webp"
+   ]
+  },
+  {
+   "slug": "abracadeiras-de-nylon-branco",
+   "name": "Abraçadeiras de Nylon – Branco",
+   "category": "abracadeiras",
+   "group": "Abraçadeiras de Nylon",
+   "application": [
+    "Abraçadeiras de Nylon"
+   ],
+   "columns": [
+    "Código",
+    "DESCRIÇÃO",
+    "Medida",
+    "MATERIAL"
+   ],
+   "rows": [
+    [
+     "80100B",
+     "Abraçadeira de Nylon",
+     "100 x 2,5 mm",
+     "100% PA66"
+    ],
+    [
+     "80150B",
+     "Abraçadeira de Nylon",
+     "150 x 3,5 mm",
+     "100% PA66"
+    ],
+    [
+     "80200B",
+     "Abraçadeira de Nylon",
+     "200 x 4,8 mm",
+     "100% PA66"
+    ],
+    [
+     "80250B",
+     "Abraçadeira de Nylon",
+     "250 x 4,8 mm",
+     "100% PA66"
+    ],
+    [
+     "80300B",
+     "Abraçadeira de Nylon",
+     "300 x 4,8 mm",
+     "100% PA66"
+    ],
+    [
+     "80301B",
+     "Abraçadeira de Nylon",
+     "300 x 7,0 mm",
+     "100% PA66"
+    ],
+    [
+     "80400B",
+     "Abraçadeira de Nylon",
+     "400 x 4,8 mm",
+     "100% PA66"
+    ],
+    [
+     "80401B",
+     "Abraçadeira de Nylon",
+     "400 x 7,0 mm",
+     "100% PA66"
+    ],
+    [
+     "80500B",
+     "Abraçadeira de Nylon",
+     "500 x 8,8 mm",
+     "100% PA66"
+    ],
+    [
+     "80550B",
+     "Abraçadeira de Nylon",
+     "550 x 8,8 mm",
+     "100% PA66"
+    ]
+   ],
+   "launch": true,
+   "source": "https://amscomponentes.com.br/produto/abracadeiras-de-nylon-branco/",
+   "images": [
+    "/produtos/abracadeiras-de-nylon-branco-1.webp",
+    "/produtos/abracadeiras-de-nylon-branco-2.webp"
+   ]
+  },
+  {
+   "slug": "abracadeiras-de-nylon-preto",
+   "name": "Abraçadeiras de Nylon – Preto",
+   "category": "abracadeiras",
+   "group": "Abraçadeiras de Nylon",
+   "application": [
+    "Abraçadeiras de Nylon Preto"
+   ],
+   "columns": [
+    "Código",
+    "DESCRIÇÃO",
+    "Medida",
+    "MATERIAL"
+   ],
+   "rows": [
+    [
+     "80100P",
+     "Abraçadeira de Nylon",
+     "100 x 2,5 mm",
+     "100% PA66"
+    ],
+    [
+     "80150P",
+     "Abraçadeira de Nylon",
+     "150 x 3,5 mm",
+     "100% PA66"
+    ],
+    [
+     "80200P",
+     "Abraçadeira de Nylon",
+     "200 x 4,8 mm",
+     "100% PA66"
+    ],
+    [
+     "80250P",
+     "Abraçadeira de Nylon",
+     "250 x 4,8 mm",
+     "100% PA66"
+    ],
+    [
+     "80300P",
+     "Abraçadeira de Nylon",
+     "300 x 4,8 mm",
+     "100% PA66"
+    ],
+    [
+     "80301P",
+     "Abraçadeira de Nylon",
+     "300 x 7,0 mm",
+     "100% PA66"
+    ],
+    [
+     "80400P",
+     "Abraçadeira de Nylon",
+     "400 x 4,8 mm",
+     "100% PA66"
+    ],
+    [
+     "80401P",
+     "Abraçadeira de Nylon",
+     "400 x 7,0 mm",
+     "100% PA66"
+    ],
+    [
+     "80500P",
+     "Abraçadeira de Nylon",
+     "500 x 8,8 mm",
+     "100% PA66"
+    ],
+    [
+     "80550P",
+     "Abraçadeira de Nylon",
+     "550 x 8,8 mm",
+     "100% PA66"
+    ]
+   ],
+   "launch": true,
+   "source": "https://amscomponentes.com.br/produto/abracadeiras-de-nylon-preto/",
+   "images": [
+    "/produtos/abracadeiras-de-nylon-preto-1.webp",
+    "/produtos/abracadeiras-de-nylon-preto-2.webp"
+   ]
+  },
+  {
+   "slug": "sacador-de-fusivel",
+   "name": "Sacador de Fusível",
+   "category": "acessorios",
+   "group": "Acessórios",
+   "application": [
+    "512001 – Sacador de Fusível"
+   ],
+   "columns": [
+    "Código",
+    "DESCRIÇÃO"
+   ],
+   "rows": [
+    [
+     "512001",
+     "Sacador de Fusível"
+    ]
+   ],
+   "launch": true,
+   "source": "https://amscomponentes.com.br/produto/sacador-de-fusivel/",
+   "images": [
+    "/produtos/sacador-de-fusivel-1.webp"
+   ]
+  }
+ ]
+}
