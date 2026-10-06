@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Figtree, Noto_Sans } from "next/font/google";
 import { ToastProvider } from "@/components/ui/toast";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
-const archivo = Archivo({ subsets: ["latin"], axes: ["wdth"], variable: "--font-archivo", display: "swap" });
-const plex = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-plex", display: "swap" });
-const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-plex-mono", display: "swap" });
+// mesma dupla tipográfica das propostas Intercientifica: títulos em Figtree, texto em Noto Sans
+const figtree = Figtree({ subsets: ["latin"], weight: ["500", "600", "700", "800"], variable: "--font-figtree", display: "swap" });
+const noto = Noto_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-noto", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${archivo.variable} ${plex.variable} ${plexMono.variable}`} suppressHydrationWarning>
+    <html lang="pt-BR" className={`${figtree.variable} ${noto.variable}`} suppressHydrationWarning>
       <head>
         {/* ativa as animações de entrada apenas quando há JavaScript */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />

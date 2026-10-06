@@ -87,8 +87,8 @@ Consentimento registrado na candidatura (data e versão do texto), retenção de
 
 Em `src/app/globals.css`, compartilhado por site e RH.
 
-- **Linguagem:** desenho técnico. Grade fina (`.blueprint`), cotas desenhadas, códigos em fonte mono, marcas de registro nos cantos (`.ticks`), o triângulo do logo como marcador. Azul é estrutura; amarelo é sinal pontual.
-- **Tipografia:** Archivo (títulos), IBM Plex Sans (texto), IBM Plex Mono (códigos e rótulos técnicos).
+- **Linguagem:** mesma base visual da proposta Intercientifica: primeira tela clara com vitrine de produtos e cartões flutuantes, botões em pílula, cantos arredondados, pontilhado discreto. Azul é estrutura; amarelo é sinal pontual; o triângulo do logo é o marcador.
+- **Tipografia:** Figtree (títulos, rótulos e códigos) e Noto Sans (texto), as mesmas da Intercientifica.
 - **Tokens:** `--navy-*`, `--steel-*`, `--signal`; espaçamento base 4 px; raios 2 a 10 px; três níveis de sombra; easing único.
 - **Componentes:** botões (primário, sinal, contorno, fantasma, perigo, carregando), campos com erro acessível, upload, badges, painéis, tabelas que viram cartões no celular, abas, modais que viram folha inferior no celular, avisos (toasts), estados vazios, skeleton, KPIs, gráficos SVG (colunas, barras, funil, rosca), calendário e Kanban (arrastar ou seletor por teclado).
 - **Movimento:** revelação ao rolar, contadores, cotas que se desenham, transições entre páginas (React `ViewTransition`), feedback em botões e cartões. Respeita `prefers-reduced-motion`.

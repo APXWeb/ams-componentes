@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Download, FlaskConical, Factory, Sparkles, MapPinned, Globe2, Briefcase, BookOpen } from "lucide-react";
-import { SpecPlate, type SpecSlide } from "@/components/site/spec-plate";
+import { ArrowRight, ArrowUpRight, Download, FlaskConical, Factory, Sparkles, MapPinned, Globe2, Briefcase, BookOpen, ShieldCheck } from "lucide-react";
+import { HeroShowcase, type ShowcaseItem } from "@/components/site/hero-showcase";
 import { ProductCard } from "@/components/site/product-card";
 import { Counter } from "@/components/ui/motion";
 import { RepPicker } from "@/components/site/rep-picker";
@@ -11,7 +11,7 @@ import { getOpenVacancies } from "@/lib/public-data";
 
 export const revalidate = 300;
 
-function slide(slug: string): SpecSlide {
+function slide(slug: string): ShowcaseItem {
   const p = productBySlug(slug)!;
   const ci = codeColumn(p);
   const codes = ci >= 0 ? p.rows.map((r) => r[ci]).filter(Boolean) : [];
@@ -19,7 +19,7 @@ function slide(slug: string): SpecSlide {
     name: p.name,
     group: categories.find((c) => c.slug === p.category)!.name,
     image: p.images[0],
-    codes: codes.length > 1 ? `REF ${codes[0]} – ${codes[codes.length - 1]}` : codes[0] ? `REF ${codes[0]}` : "",
+    codes: codes.length > 1 ? `ref. ${codes[0]} a ${codes[codes.length - 1]}` : codes[0] ? `ref. ${codes[0]}` : "",
     count: p.rows.length,
     href: `/produtos/${p.slug}`,
   };
@@ -31,53 +31,64 @@ export default function Home() {
   const openJobs = getOpenVacancies().length;
   const years = new Date().getFullYear() - SITE.founded;
   const featured = launches();
+  const lp = productBySlug("fusivel-maxi-lamina-plus") ?? featured[0];
+  const launchCard = lp ? { name: lp.name, image: lp.images[0], href: `/produtos/${lp.slug}` } : undefined;
 
   return (
     <>
       {/* HERO */}
-      <section className="hero blueprint on-dark" aria-labelledby="hero-title">
-        <div className="container hero__inner">
-          <div className="hero__anim">
-            <span className="eyebrow">Fabricante nacional · Desde {SITE.founded}</span>
-            <h1 id="hero-title">
-              A maior fabricante nacional de <em>fusíveis automotivos.</em>
-            </h1>
-            <p className="hero__lede">
-              Fornecedora dos mais conceituados distribuidores de autopeças e da indústria do país, com linha completa de fusíveis, cordoalhas, terminais e cabos de bateria.
-            </p>
-            <div className="hero__ctas">
-              <Link href="/produtos" className="btn btn--signal btn--lg">
-                Ver produtos <ArrowRight className="btn__arrow" aria-hidden />
-              </Link>
-              <a href={SITE.catalogPdf} className="btn btn--on-dark btn--lg" target="_blank" rel="noopener">
-                <Download aria-hidden /> Catálogo 2025 (PDF)
-              </a>
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero__inner">
+          <div className="hero__copy-wrap">
+            <span className="hero__dots" aria-hidden />
+            <div className="hero__copy hero__anim">
+              <span className="eyebrow">Fabricante nacional · Desde {SITE.founded}</span>
+              <h1 id="hero-title">
+                A maior fabricante nacional de <em>fusíveis automotivos</em>
+              </h1>
+              <p className="hero__lede">
+                Fornecedora dos mais conceituados distribuidores de autopeças e da indústria do país, com linha completa de fusíveis, cordoalhas, terminais e cabos de bateria.
+              </p>
+              <div className="hero__ctas">
+                <Link href="/produtos" className="btn btn--lg">
+                  Ver produtos <ArrowRight className="btn__arrow" aria-hidden />
+                </Link>
+                <a href={SITE.catalogPdf} className="btn btn--outline btn--lg" target="_blank" rel="noopener">
+                  <Download aria-hidden /> Catálogo 2025 (PDF)
+                </a>
+              </div>
+              <ul className="hero__trust">
+                <li>
+                  <ShieldCheck aria-hidden /> Laboratório próprio de qualidade
+                </li>
+                <li>
+                  <Factory aria-hidden /> Fabricação nacional em {SITE.city}, {SITE.state}
+                </li>
+              </ul>
             </div>
           </div>
-          <SpecPlate slides={slides} />
+          <HeroShowcase items={slides} launch={launchCard} />
         </div>
-        <div className="stats">
-          <div className="container stats__grid">
-            <div className="stat">
-              <span className="stat__value">{SITE.founded}</span>
-              <span className="stat__label">Ano de fundação, em {SITE.city} ({SITE.state})</span>
-              <span className="stat__ref">{years} ANOS</span>
-            </div>
-            <div className="stat">
-              <Counter className="stat__value" value={products.length} />
-              <span className="stat__label">Linhas de produto no catálogo</span>
-              <span className="stat__ref">{categories.length} FAMÍLIAS</span>
-            </div>
-            <div className="stat">
-              <Counter className="stat__value" value={totalCodes} />
-              <span className="stat__label">Códigos com especificação publicada</span>
-              <span className="stat__ref">AMPERAGEM · MEDIDAS · APLICAÇÃO</span>
-            </div>
-            <div className="stat">
-              <Counter className="stat__value" value={statesWithRep} />
-              <span className="stat__label">Estados com representante comercial</span>
-              <span className="stat__ref">+ ATENDIMENTO DIRETO</span>
-            </div>
+      </section>
+
+      {/* NÚMEROS */}
+      <section className="stats on-dark" aria-label="A AMS em números">
+        <div className="container stats__grid">
+          <div className="stat">
+            <span className="stat__value">{SITE.founded}</span>
+            <span className="stat__label">Ano de fundação, há {years} anos</span>
+          </div>
+          <div className="stat">
+            <Counter className="stat__value" value={products.length} />
+            <span className="stat__label">Linhas de produto em {categories.length} famílias</span>
+          </div>
+          <div className="stat">
+            <Counter className="stat__value" value={totalCodes} />
+            <span className="stat__label">Códigos com especificação técnica</span>
+          </div>
+          <div className="stat">
+            <Counter className="stat__value" value={statesWithRep} />
+            <span className="stat__label">Estados com representante comercial</span>
           </div>
         </div>
       </section>

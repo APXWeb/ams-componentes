@@ -37,7 +37,6 @@
 .sidebar__brand strong {
   display: block;
   font-family: var(--font-display);
-  font-stretch: 85%;
   font-weight: 800;
   font-size: 0.98rem;
   letter-spacing: 0.02em;
@@ -47,6 +46,7 @@
 }
 .sidebar__brand span {
   font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 0.6875rem;
   letter-spacing: 0.12em;
   color: var(--signal);
@@ -65,6 +65,7 @@
   display: block;
   padding: 0 10px 8px;
   font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 0.65rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -131,6 +132,7 @@
   background: var(--signal);
   color: var(--navy-900);
   font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 0.6875rem;
   font-weight: 500;
 }
@@ -244,7 +246,6 @@
 }
 .page-header h1 {
   font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
-  font-stretch: 94%;
   margin-top: 8px;
 }
 .page-header p {
@@ -263,6 +264,7 @@
   gap: 6px;
   font-size: var(--fs-xs);
   font-family: var(--font-mono);
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -404,7 +406,6 @@ a.kpi:hover {
 .kpi__value {
   font-family: var(--font-display);
   font-weight: 700;
-  font-stretch: 92%;
   font-size: 2rem;
   line-height: 1.05;
   color: var(--navy-900);
@@ -506,6 +507,7 @@ a.list-item:hover,
 .date-chip span {
   display: block;
   font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 0.625rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -729,6 +731,7 @@ a.list-item:hover,
 }
 .kcol__step {
   font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 0.6875rem;
   color: var(--text-3);
 }
@@ -740,6 +743,7 @@ a.list-item:hover,
 .kcol__count {
   margin-left: auto;
   font-family: var(--font-mono);
+  font-weight: 600;
   font-size: var(--fs-xs);
   color: var(--navy-700);
   background: var(--surface);
@@ -884,6 +888,7 @@ a.list-item:hover,
 .cal__dow {
   padding: 8px;
   font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 0.65rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -912,6 +917,7 @@ a.list-item:hover,
 }
 .cal__num {
   font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 0.6875rem;
   color: var(--text-3);
 }
@@ -974,6 +980,7 @@ a.list-item:hover,
 }
 .chart text {
   font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 10px;
   fill: var(--text-3);
 }
@@ -1027,6 +1034,7 @@ a.list-item:hover,
 }
 .hbar__val {
   font-family: var(--font-mono);
+  font-weight: 600;
   font-size: var(--fs-xs);
   text-align: right;
   color: var(--steel-800);
@@ -1136,7 +1144,6 @@ a.list-item:hover,
 .login__art h1 {
   color: #fff;
   font-size: clamp(2rem, 1.4rem + 2.4vw, 3.4rem);
-  font-stretch: 90%;
   max-width: 14ch;
   margin-top: 18px;
 }
@@ -1153,6 +1160,7 @@ a.list-item:hover,
 }
 .login__mods span {
   font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 0.6875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1265,6 +1273,7 @@ a.list-item:hover,
 .cmd__group {
   padding: 8px 10px 4px;
   font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 0.65rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
