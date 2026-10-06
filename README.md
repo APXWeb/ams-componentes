@@ -34,6 +34,24 @@ npm run db:setup -- --empty   # banco limpo só com o admin, para implantação
 npm run lgpd:retencao         # anonimiza candidatos com retenção vencida (agendar diariamente)
 ```
 
+## Hospedagem
+
+O RH grava banco (SQLite) e arquivos em disco, então a hospedagem precisa de **Node.js com disco persistente** montado em `/data`. Hospedagem estática (GitHub Pages, Netlify) ou serverless sem disco (Vercel) não servem sem trocar a camada de dados.
+
+**Render (recomendado, blueprint pronto em `render.yaml`):** [Deploy no Render](https://render.com/deploy?repo=https://github.com/APXWeb/ams-componentes) → confirmar o serviço `ams-componentes` (plano Starter, disco de 1 GB). Cada push na `main` publica de novo.
+
+**Railway / Fly.io / VPS:** usar o `Dockerfile` e montar um volume em `/data`.
+
+| Variável | Uso |
+|---|---|
+| `SEED_DEMO` | `1` no primeiro boot cria os dados de demonstração; `0` cria banco vazio só com o admin |
+| `PREVIEW_MODE` | `1` bloqueia indexação do site inteiro (obrigatório enquanto houver dados fictícios); lido no build |
+| `SITE_URL` | endereço público (metadados, sitemap) |
+| `ADMIN_EMAIL`, `ADMIN_PASSWORD` | admin criado quando `SEED_DEMO=0` |
+| `DATABASE_PATH`, `STORAGE_PATH` | padrão `/data/ams.db` e `/data/storage` |
+
+O container aplica as migrations a cada boot sem apagar dados (`scripts/start.sh`) e expõe `/healthz`. Para recomeçar a demonstração do zero, apague `/data/ams.db` e reinicie o serviço.
+
 ## Fase 1 — Auditoria do site atual (out/2026)
 
 O "projeto existente" é o site WordPress em produção. Não havia código-fonte disponível, então o conteúdo foi extraído do site no ar (scripts em `_tools/`) e transcrito para dados estruturados (`src/data/catalog.json`, `src/lib/site.ts`).

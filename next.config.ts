@@ -7,6 +7,13 @@ const securityHeaders = [
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
 ];
 
+/*
+ * PREVIEW_MODE=1: publicação de prévia/demonstração. Bloqueia indexação do site inteiro para
+ * que a proposta (com dados fictícios) nunca concorra com o site oficial da AMS nos buscadores.
+ * Lido no build: definir antes de `next build`.
+ */
+const preview = process.env.PREVIEW_MODE === "1";
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   serverExternalPackages: ["better-sqlite3"],
@@ -20,7 +27,7 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
-      { source: "/:path*", headers: securityHeaders },
+      { source: "/:path*", headers: preview ? [...securityHeaders, { key: "X-Robots-Tag", value: "noindex, nofollow" }] : securityHeaders },
       // a área privada nunca deve ser indexada nem guardada em cache compartilhado
       {
         source: "/rh/:path*",

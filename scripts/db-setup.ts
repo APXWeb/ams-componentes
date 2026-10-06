@@ -102,10 +102,13 @@ async function main() {
   const pw = await hashPassword(DEMO_PASSWORD);
 
   if (EMPTY) {
+    // em produção, definir ADMIN_EMAIL e ADMIN_PASSWORD (trocar a senha no primeiro acesso)
+    const email = process.env.ADMIN_EMAIL ?? "admin@ams.example";
+    const password = process.env.ADMIN_PASSWORD ?? DEMO_PASSWORD;
     db.insert(schema.users)
-      .values({ email: "admin@ams.example", name: "Administrador", passwordHash: pw, role: "ADMIN" })
+      .values({ email, name: "Administrador", passwordHash: await hashPassword(password), role: "ADMIN" })
       .run();
-    console.log("Banco vazio criado. Login: admin@ams.example /", DEMO_PASSWORD);
+    console.log(`Banco vazio criado. Login: ${email}${process.env.ADMIN_PASSWORD ? "" : ` / ${DEMO_PASSWORD}`}`);
     return;
   }
 

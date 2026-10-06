@@ -1,0 +1,12 @@
+node_modules
+.next
+.git
+data
+storage
+storage-test
+test-results
+playwright-report
+_tools/scrape
+_tools/shots
+.impeccable
+*.log

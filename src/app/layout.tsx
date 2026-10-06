@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description:
     "Fabricante nacional de fusíveis automotivos desde 1977, com linha completa de cordoalhas, terminais e cabos de bateria para distribuidores de autopeças e indústria.",
   openGraph: { type: "website", locale: "pt_BR", siteName: SITE.name },
+  ...(process.env.PREVIEW_MODE === "1" ? { robots: { index: false, follow: false } } : {}),
 };
 
 export const viewport: Viewport = {
