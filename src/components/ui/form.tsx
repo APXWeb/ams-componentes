@@ -2,8 +2,9 @@
 
 import { useFormStatus } from "react-dom";
 import { createContext, useContext, useId, useRef, useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { initialState, type ActionState } from "@/lib/action";
-import { FileUp, FileCheck2 } from "lucide-react";
+import { FileUp, FileText, ImageIcon, RefreshCw, X } from "lucide-react";
 import { fmtBytes } from "@/lib/format";
 import { useToast } from "./toast";
 
@@ -11,10 +12,10 @@ import { useToast } from "./toast";
 export const PendingContext = createContext(false);
 
 /**
- * Liga um formulário a uma Server Action:
+ * Liga um formulário a uma ação (hoje simulada no navegador; na versão real, uma chamada à API):
  * - não usa o reset automático do React 19, preservando o que foi digitado quando a validação falha;
- * - mostra o aviso assim que o servidor responde, mesmo que a ação remova o próprio formulário da tela
- *   (ex.: o botão "Enviar" some depois do upload). O provedor de avisos vive na raiz da aplicação.
+ * - mostra o aviso assim que a ação responde, mesmo que ela remova o próprio formulário da tela;
+ * - navega para `redirect` quando a ação pede (ex.: depois de cadastrar, abre o registro criado).
  */
 export function useFormAction(
   action: (prev: ActionState, fd: FormData) => Promise<ActionState>,
@@ -23,6 +24,7 @@ export function useFormAction(
   const [state, setState] = useState<ActionState>(initialState);
   const [pending, startTransition] = useTransition();
   const toast = useToast();
+  const router = useRouter();
   const prev = useRef(state);
   const { toast: showToast = true, onSuccess } = opts;
 
@@ -37,6 +39,11 @@ export function useFormAction(
       if (!res) return;
       prev.current = res;
       setState(res);
+      if (res.ok && res.redirect) {
+        if (res.message) toast(res.message, "success");
+        router.push(res.redirect);
+        return;
+      }
       if (showToast && res.message) toast(res.message, res.ok ? "success" : "error", res.sticky ? 60000 : undefined);
       if (res.ok) onSuccess?.(res, form);
     });
@@ -184,40 +191,68 @@ export function FileDrop({
   const err = error ?? ctxError;
   const [file, setFile] = useState<File | null>(null);
   const [over, setOver] = useState(false);
+  const input = useRef<HTMLInputElement>(null);
   const id = useId();
+  const isImage = file?.type.startsWith("image/");
+  const remove = () => {
+    if (input.current) input.current.value = "";
+    setFile(null);
+    input.current?.focus();
+  };
   return (
     <div className="field">
       <span className="label" id={`${id}-l`}>
         {label}
       </span>
-      <div className={`drop ${over ? "is-over" : ""} ${file ? "has-file" : ""}`} onDragEnter={() => setOver(true)} onDragLeave={() => setOver(false)} onDrop={() => setOver(false)}>
-        {file ? <FileCheck2 aria-hidden /> : <FileUp aria-hidden />}
+      <div
+        className={`drop ${over ? "is-over" : ""} ${file ? "has-file" : ""} ${err && !file ? "has-error" : ""}`}
+        onDragEnter={() => setOver(true)}
+        onDragLeave={() => setOver(false)}
+        onDrop={() => setOver(false)}
+      >
         {file ? (
-          <span>
-            <strong>{file.name}</strong> · {fmtBytes(file.size)}
-            <br />
-            <span className="xsmall">Clique para trocar o arquivo</span>
-          </span>
+          <div className="drop__file">
+            <span className="drop__file-icon" aria-hidden>
+              {isImage ? <ImageIcon /> : <FileText />}
+            </span>
+            <span className="drop__file-meta">
+              <strong title={file.name}>{file.name}</strong>
+              <span className="xsmall">{fmtBytes(file.size)} · pronto para enviar</span>
+            </span>
+            <span className="drop__file-actions">
+              <button type="button" className="btn btn--ghost btn--sm" onClick={() => input.current?.click()}>
+                <RefreshCw aria-hidden /> Trocar
+              </button>
+              <button type="button" className="btn btn--ghost btn--sm btn--icon" onClick={remove} aria-label={`Remover ${file.name}`} title="Remover arquivo">
+                <X aria-hidden />
+              </button>
+            </span>
+          </div>
         ) : (
-          <span>
-            <strong>Selecione</strong> ou arraste o arquivo aqui
-            <br />
-            <span className="xsmall">{help}</span>
-          </span>
+          <>
+            <FileUp aria-hidden />
+            <span>
+              <strong>Selecione</strong> ou arraste o arquivo aqui
+              <br />
+              <span className="xsmall">{help}</span>
+            </span>
+          </>
         )}
         <input
+          ref={input}
           type="file"
           id={name}
           name={name}
           accept={accept}
           required={required}
+          tabIndex={file ? -1 : undefined}
           aria-labelledby={`${id}-l`}
           aria-invalid={err ? true : undefined}
           aria-describedby={err ? `${name}-error` : undefined}
           onChange={(e) => setFile(e.currentTarget.files?.[0] ?? null)}
         />
       </div>
-      {err ? (
+      {err && !file ? (
         <span className="field-error" id={`${name}-error`} role="alert">
           {err}
         </span>

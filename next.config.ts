@@ -8,36 +8,38 @@ const securityHeaders = [
 ];
 
 /*
- * PREVIEW_MODE=1: publicação de prévia/demonstração. Bloqueia indexação do site inteiro para
- * que a proposta (com dados fictícios) nunca concorra com o site oficial da AMS nos buscadores.
+ * PREVIEW_MODE=1: publicação do projeto conceitual. Bloqueia indexação do site inteiro para
+ * que a demonstração (com dados fictícios) nunca concorra com o site oficial da AMS nos buscadores.
  * Lido no build: definir antes de `next build`.
  */
 const preview = process.env.PREVIEW_MODE === "1";
 
+/*
+ * STATIC_EXPORT=1 gera o site como arquivos estáticos em out/ (GitHub Pages). BASE_PATH é o
+ * subcaminho da publicação, ex.: "/ams-componentes" em apxweb.github.io/ams-componentes.
+ * Como a demonstração não tem backend, o site inteiro funciona como estático.
+ */
+const staticExport = process.env.STATIC_EXPORT === "1";
+const basePath = process.env.BASE_PATH ?? "";
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  serverExternalPackages: ["better-sqlite3"],
-  experimental: {
-    // currículos e documentos chegam via Server Actions; o limite real por arquivo é validado em src/lib/storage.ts
-    serverActions: { bodySizeLimit: "9mb" },
-    authInterrupts: true,
-  },
-  images: {
-    formats: ["image/avif", "image/webp"],
-  },
+  ...(staticExport ? { output: "export" as const, trailingSlash: true } : {}),
+  basePath,
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
+  // as imagens já são WEBP otimizadas; o carregador só aplica o subcaminho da publicação
+  images: { loader: "custom", loaderFile: "./src/lib/image-loader.ts" },
+  ...(staticExport ? {} : serverOnly()),
+};
+
+/** Cabeçalhos e redirecionamentos só existem quando há servidor Node (não no GitHub Pages). */
+function serverOnly(): Pick<NextConfig, "headers" | "redirects"> {
+  return {
   async headers() {
     return [
       { source: "/:path*", headers: preview ? [...securityHeaders, { key: "X-Robots-Tag", value: "noindex, nofollow" }] : securityHeaders },
-      // a área privada nunca deve ser indexada nem guardada em cache compartilhado
-      {
-        source: "/rh/:path*",
-        headers: [
-          { key: "X-Robots-Tag", value: "noindex, nofollow" },
-          { key: "Cache-Control", value: "private, no-store" },
-        ],
-      },
-      // arquivos privados podem ser pré-visualizados dentro do próprio sistema (currículo em PDF)
-      { source: "/rh/arquivos/:path*", headers: [{ key: "X-Frame-Options", value: "SAMEORIGIN" }] },
+      // a área do RH nunca deve ser indexada
+      { source: "/rh/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] },
     ];
   },
   async redirects() {
@@ -57,6 +59,7 @@ const nextConfig: NextConfig = {
       { source: "/politica-de-privacidade", destination: "/privacidade", permanent: true },
     ];
   },
-};
+  };
+}
 
 export default nextConfig;

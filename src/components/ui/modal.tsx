@@ -6,7 +6,7 @@ import type { ActionState } from "@/lib/action";
 import { useToast } from "./toast";
 import { SubmitButton, FormErrorsContext, PendingContext, useFormAction } from "./form";
 
-type ServerAction = (prev: ActionState, fd: FormData) => Promise<ActionState>;
+type FormActionFn = (prev: ActionState, fd: FormData) => Promise<ActionState>;
 
 export function Modal({
   open,
@@ -15,6 +15,7 @@ export function Modal({
   description,
   children,
   wide,
+  className,
 }: {
   open: boolean;
   onClose: () => void;
@@ -22,6 +23,7 @@ export function Modal({
   description?: string;
   children: React.ReactNode;
   wide?: boolean;
+  className?: string;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
@@ -33,7 +35,7 @@ export function Modal({
   return (
     <dialog
       ref={ref}
-      className="modal"
+      className={`modal ${className ?? ""}`}
       style={wide ? { width: "min(760px, calc(100vw - 32px))" } : undefined}
       aria-labelledby="modal-title"
       onClose={onClose}
@@ -61,7 +63,7 @@ export function Modal({
   );
 }
 
-/** Botão que abre um modal com formulário ligado a uma Server Action. */
+/** Botão que abre um modal com formulário ligado a uma ação. */
 export function ActionModal({
   trigger,
   triggerClass = "btn",
@@ -80,7 +82,7 @@ export function ActionModal({
   triggerClass?: string;
   title: string;
   description?: string;
-  action: ServerAction;
+  action: FormActionFn;
   submitLabel: string;
   submitClass?: string;
   children?: React.ReactNode;
@@ -112,7 +114,7 @@ function ModalForm({
   children,
   hidden,
 }: {
-  action: ServerAction;
+  action: FormActionFn;
   onDone: () => void;
   onCancel: () => void;
   submitLabel: string;
@@ -153,7 +155,7 @@ function ModalForm({
   );
 }
 
-/** Formulário inline ligado a uma Server Action, com feedback em toast. */
+/** Formulário inline ligado a uma ação, com feedback em toast. */
 export function ActionForm({
   action,
   children,
@@ -162,7 +164,7 @@ export function ActionForm({
   hidden,
   onSuccess,
 }: {
-  action: ServerAction;
+  action: FormActionFn;
   children: React.ReactNode;
   className?: string;
   resetOnSuccess?: boolean;

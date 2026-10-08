@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight, Briefcase, Building2, FlaskConical, History, MapPin, Sparkles, Target, Users } from "lucide-react";
-import { getDepartmentsPublic, getOpenVacancies, isDemoEnvironment } from "@/lib/public-data";
-import { EMPLOYMENT_LABEL } from "@/lib/labels";
+import { Briefcase, FlaskConical, History, Sparkles, Target } from "lucide-react";
+import { getDepartmentsPublic, getOpenVacancies } from "@/lib/demo/public";
 import { ABOUT, SITE } from "@/lib/site";
-import { relative } from "@/lib/format";
-import { LinkedinIcon } from "@/components/ui/brand-icons";
+import { Suspense } from "react";
+import { JobFilters, JobFiltersFromUrl, JobList, JobListFromUrl } from "@/components/site/job-list";
 
 export const metadata: Metadata = {
   title: "Trabalhe conosco",
@@ -14,16 +12,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/trabalhe-conosco" },
 };
 
-export const dynamic = "force-dynamic";
-
-export default async function TrabalheConoscoPage({ searchParams }: PageProps<"/trabalhe-conosco">) {
-  const sp = await searchParams;
+export default function TrabalheConoscoPage() {
   const all = getOpenVacancies();
-  const area = typeof sp.area === "string" ? sp.area : "";
-  const jobs = area ? all.filter((j) => j.department === area) : all;
   const departments = getDepartmentsPublic();
-  const areas = [...new Set(all.map((j) => j.department))];
-  const demo = isDemoEnvironment();
   const years = new Date().getFullYear() - SITE.founded;
 
   return (
@@ -93,70 +84,16 @@ export default async function TrabalheConoscoPage({ searchParams }: PageProps<"/
               <h2 className="section-title" id="vagas-title">
                 Oportunidades na AMS
               </h2>
-              {demo ? <span className="demo-flag">Ambiente de demonstração: vagas fictícias</span> : null}
+              <span className="demo-flag">Projeto conceitual: vagas fictícias</span>
             </div>
-            {areas.length > 1 ? (
-              <nav aria-label="Filtrar por área" className="row wrap" style={{ "--gap": "6px" } as React.CSSProperties}>
-                <Link href="/trabalhe-conosco#vagas" scroll={false} className={`btn btn--sm ${area ? "btn--outline" : ""}`} aria-current={!area ? "page" : undefined}>
-                  Todas
-                </Link>
-                {areas.map((a) => (
-                  <Link
-                    key={a}
-                    href={`/trabalhe-conosco?area=${encodeURIComponent(a)}#vagas`}
-                    scroll={false}
-                    className={`btn btn--sm ${area === a ? "" : "btn--outline"}`}
-                    aria-current={area === a ? "page" : undefined}
-                  >
-                    {a}
-                  </Link>
-                ))}
-              </nav>
-            ) : null}
+            <Suspense fallback={<JobFilters initial={all} area="" />}>
+              <JobFiltersFromUrl initial={all} />
+            </Suspense>
           </div>
 
-          {jobs.length ? (
-            <div className="job-list">
-              {jobs.map((j, i) => (
-                <article key={j.id} className="job" data-reveal style={{ "--reveal-delay": `${i * 50}ms` } as React.CSSProperties}>
-                  <div>
-                    <h3>
-                      <Link href={`/trabalhe-conosco/${j.slug}`}>{j.title}</Link>
-                    </h3>
-                    <p className="small muted" style={{ marginTop: 4 }}>
-                      {j.summary}
-                    </p>
-                    <div className="job__meta">
-                      <span>
-                        <Building2 aria-hidden /> {j.department}
-                      </span>
-                      <span>
-                        <MapPin aria-hidden /> {j.location}
-                      </span>
-                      <span>
-                        <Briefcase aria-hidden /> {EMPLOYMENT_LABEL[j.employmentType]}
-                      </span>
-                      <span className="subtle">Publicada {relative(j.publishedAt)}</span>
-                    </div>
-                  </div>
-                  <span className="job__go" aria-hidden>
-                    <ArrowUpRight />
-                  </span>
-                </article>
-              ))}
-            </div>
-          ) : (
-            <div className="panel empty">
-              <span className="empty__icon">
-                <Users aria-hidden />
-              </span>
-              <strong>Nenhuma vaga aberta {area ? "nesta área" : "no momento"}</strong>
-              <p>Novas oportunidades são publicadas aqui e no LinkedIn da AMS.</p>
-              <a href={SITE.social.linkedin} className="btn btn--outline" target="_blank" rel="noopener" style={{ marginTop: 10 }}>
-                <LinkedinIcon width={16} height={16} aria-hidden /> Seguir no LinkedIn
-              </a>
-            </div>
-          )}
+          <Suspense fallback={<JobList initial={all} area="" />}>
+            <JobListFromUrl initial={all} />
+          </Suspense>
         </div>
       </section>
 
@@ -197,7 +134,7 @@ export default async function TrabalheConoscoPage({ searchParams }: PageProps<"/
           <div className="section-head" data-reveal>
             <span className="eyebrow">Áreas da empresa</span>
             <h2 className="section-title">Onde você pode atuar.</h2>
-            {demo ? <span className="demo-flag">Áreas de demonstração: substituir pela estrutura real da AMS</span> : null}
+            <span className="demo-flag">Áreas ilustrativas do projeto conceitual</span>
           </div>
           <div className="lines" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))" }}>
             {departments.map((d, i) => (

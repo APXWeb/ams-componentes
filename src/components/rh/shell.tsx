@@ -2,10 +2,15 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ViewTransition, useEffect, useRef, useState, useTransition } from "react";
+import { ViewTransition, useEffect, useRef, useState } from "react";
 import {
   BarChart3,
+  Bell,
   Briefcase,
+  CalendarClock,
+  Check,
+  ChevronsUpDown,
+  CornerDownLeft,
   FileText,
   Inbox,
   KeyRound,
@@ -15,18 +20,24 @@ import {
   Megaphone,
   Menu,
   Palmtree,
+  RotateCcw,
   Search,
   ShieldCheck,
   SquareKanban,
   User,
+  UserRound,
   Users,
   X,
-  CornerDownLeft,
   type LucideIcon,
 } from "lucide-react";
-import { initials } from "@/lib/format";
-import { logout } from "@/app/rh/auth-actions";
-import { globalSearch, type SearchHit } from "@/app/rh/(app)/search-action";
+import { relative } from "@/lib/format";
+import { Avatar } from "@/components/ui/bits";
+import { useToast } from "@/components/ui/toast";
+import { DEMO_PERSONAS } from "@/lib/demo/seed";
+import { currentUser, getData, resetDemo, signIn, signOut } from "@/lib/demo/store";
+import { globalSearch, type Notice, type SearchHit } from "@/lib/demo/queries";
+import { markNotificationsSeen } from "@/lib/demo/actions/admin";
+import { asset } from "@/lib/asset";
 
 const ICONS = {
   dashboard: LayoutDashboard,
@@ -44,18 +55,48 @@ const ICONS = {
   briefcase: Briefcase,
 } satisfies Record<string, LucideIcon>;
 
+const NOTICE_ICON: Record<Notice["icon"], LucideIcon> = {
+  candidate: UserRound,
+  vacation: Palmtree,
+  request: Inbox,
+  document: FileText,
+  announcement: Megaphone,
+  interview: CalendarClock,
+};
+
 export type NavItem = { href: string; label: string; icon: keyof typeof ICONS; count?: number };
 export type NavGroup = { label: string; items: NavItem[] };
+
+/** Fecha um menu suspenso ao clicar fora ou apertar Esc. */
+function useDismiss(open: boolean, close: () => void) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: PointerEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) close();
+    };
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
+    document.addEventListener("pointerdown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open, close]);
+  return ref;
+}
 
 export function RhShell({
   groups,
   user,
-  demo,
+  notices,
+  seen,
   children,
 }: {
   groups: NavGroup[];
-  user: { name: string; role: string; canSearchPeople: boolean };
-  demo: boolean;
+  user: { id: number; name: string; role: string; photo: string | null; canSearchPeople: boolean };
+  notices: Notice[];
+  seen: string[];
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
@@ -90,7 +131,7 @@ export function RhShell({
       <aside className="sidebar" aria-label="Navegação do RH">
         <Link href="/rh" className="sidebar__brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/img/logo-ams.png" alt="" width={34} height={30} />
+          <img src={asset("/img/logo-ams.png")} alt="" width={34} height={30} />
           <div>
             <strong>AMS Componentes</strong>
             <span>RH · ÁREA PRIVADA</span>
@@ -121,20 +162,7 @@ export function RhShell({
             </div>
           ))}
         </nav>
-        <div className="sidebar__user">
-          <span className="avatar avatar--sm" aria-hidden>
-            {initials(user.name)}
-          </span>
-          <Link href="/rh/conta" className="sidebar__user-info" title="Minha conta e senha">
-            <strong>{user.name}</strong>
-            <span>{user.role} · Minha conta</span>
-          </Link>
-          <form action={logout}>
-            <button type="submit" className="btn btn--ghost btn--icon btn--sm" aria-label="Sair do sistema" title="Sair">
-              <LogOut aria-hidden />
-            </button>
-          </form>
-        </div>
+        <UserMenu user={user} />
       </aside>
       <div className="scrim" onClick={() => setNavOpen(false)} aria-hidden />
 
@@ -149,12 +177,11 @@ export function RhShell({
             <span className="kbd">Ctrl K</span>
           </button>
           <span className="grow" />
-          {demo ? (
-            <span className="demo-pill" title="Os dados exibidos são fictícios">
-              Dados de demonstração
-            </span>
-          ) : null}
-          <Link href="/" className="btn btn--ghost btn--sm" target="_blank">
+          <span className="demo-pill" title="Sistema de demonstração: dados fictícios, nada é enviado para fora do navegador">
+            Demonstração
+          </span>
+          <NotificationBell userId={user.id} notices={notices} seen={seen} />
+          <Link href="/" className="btn btn--ghost btn--sm topbar__site" target="_blank">
             Ver site
           </Link>
         </header>
@@ -170,29 +197,162 @@ export function RhShell({
   );
 }
 
+/* ------------------------------------------------------------ menu do usuário */
+
+function UserMenu({ user }: { user: { id: number; name: string; role: string; photo: string | null } }) {
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
+  const toast = useToast();
+  const ref = useDismiss(open, () => setOpen(false));
+
+  const switchTo = (id: number, label: string) => {
+    setOpen(false);
+    if (id === user.id) return;
+    signIn(id);
+    toast(`Agora você vê o sistema como ${label}.`);
+    router.push("/rh");
+  };
+
+  return (
+    <div className="sidebar__user" ref={ref}>
+      <button type="button" className="user-trigger" aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
+        <Avatar name={user.name} photo={user.photo} size="sm" />
+        <span className="sidebar__user-info">
+          <strong>{user.name}</strong>
+          <span>{user.role}</span>
+        </span>
+        <ChevronsUpDown aria-hidden className="user-trigger__chev" />
+      </button>
+      {open ? (
+        <div className="popover popover--up" role="menu" aria-label="Conta e perfil de demonstração">
+          <div className="popover__section">
+            <span className="popover__label">Ver o sistema como</span>
+            {DEMO_PERSONAS.map((p) => (
+              <button key={p.userId} type="button" role="menuitemradio" aria-checked={p.userId === user.id} className="popover__item" onClick={() => switchTo(p.userId, p.title)}>
+                <Avatar name={p.person} size="sm" />
+                <span className="popover__item-main">
+                  <strong>{p.title}</strong>
+                  <span>{p.person}</span>
+                </span>
+                {p.userId === user.id ? <Check aria-hidden className="popover__check" /> : null}
+              </button>
+            ))}
+          </div>
+          <div className="popover__section">
+            <Link href="/rh/conta" role="menuitem" className="popover__item popover__item--plain" onClick={() => setOpen(false)}>
+              <KeyRound aria-hidden /> Minha conta
+            </Link>
+            <button
+              type="button"
+              role="menuitem"
+              className="popover__item popover__item--plain"
+              onClick={() => {
+                setOpen(false);
+                resetDemo();
+                toast("Dados de demonstração restaurados ao estado inicial.");
+              }}
+            >
+              <RotateCcw aria-hidden /> Restaurar dados da demonstração
+            </button>
+            <button
+              type="button"
+              role="menuitem"
+              className="popover__item popover__item--plain"
+              onClick={() => {
+                signOut();
+                router.push("/rh/login?saiu=1");
+              }}
+            >
+              <LogOut aria-hidden /> Sair
+            </button>
+          </div>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------- notificações */
+
+function NotificationBell({ userId, notices, seen }: { userId: number; notices: Notice[]; seen: string[] }) {
+  const [open, setOpen] = useState(false);
+  const ref = useDismiss(open, () => setOpen(false));
+  const unseen = notices.filter((n) => !seen.includes(n.id));
+  return (
+    <div className="bell" ref={ref}>
+      <button type="button" className="btn btn--ghost btn--icon bell__btn" aria-label={`Notificações${unseen.length ? `: ${unseen.length} novas` : ""}`} aria-expanded={open} aria-haspopup="dialog" onClick={() => setOpen((v) => !v)}>
+        <Bell aria-hidden />
+        {unseen.length ? <span className="bell__dot">{unseen.length > 9 ? "9+" : unseen.length}</span> : null}
+      </button>
+      {open ? (
+        <div className="popover popover--down bell__panel" role="dialog" aria-label="Notificações">
+          <div className="bell__head">
+            <strong>Notificações</strong>
+            {unseen.length ? (
+              <button type="button" className="link xsmall" onClick={() => markNotificationsSeen(notices.map((n) => n.id), userId)}>
+                Marcar todas como lidas
+              </button>
+            ) : (
+              <span className="xsmall subtle">Tudo em dia</span>
+            )}
+          </div>
+          {notices.length ? (
+            <ul className="bell__list">
+              {notices.slice(0, 9).map((n) => {
+                const Icon = NOTICE_ICON[n.icon];
+                const isNew = !seen.includes(n.id);
+                return (
+                  <li key={n.id}>
+                    <Link
+                      href={n.href}
+                      className={`bell__item ${isNew ? "is-new" : ""}`}
+                      onClick={() => {
+                        markNotificationsSeen([n.id], userId);
+                        setOpen(false);
+                      }}
+                    >
+                      <span className={`bell__icon bell__icon--${n.tone}`} aria-hidden>
+                        <Icon />
+                      </span>
+                      <span className="bell__text">
+                        <strong>{n.title}</strong>
+                        <span>{n.detail}</span>
+                        <small>{relative(n.at)}</small>
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <p className="small muted" style={{ padding: "18px 16px" }}>
+              Nenhuma notificação por enquanto.
+            </p>
+          )}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------ busca rápida */
+
 function CommandPalette({ onClose, pages }: { onClose: () => void; pages: NavItem[] }) {
   const ref = useRef<HTMLDialogElement>(null);
   const router = useRouter();
   const [q, setQ] = useState("");
-  const [hits, setHits] = useState<SearchHit[]>([]);
   const [sel, setSel] = useState(0);
-  const [, start] = useTransition();
 
   useEffect(() => {
     ref.current?.showModal();
   }, []);
 
-  useEffect(() => {
-    if (q.trim().length < 2) return;
-    const t = setTimeout(() => start(async () => setHits(await globalSearch(q))), 160);
-    return () => clearTimeout(t);
-  }, [q]);
-
   const norm = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   const pageHits: SearchHit[] = pages
     .filter((p) => !q.trim() || norm(p.label).includes(norm(q.trim())))
     .map((p) => ({ group: "Páginas", label: p.label, href: p.href, kind: "page" }));
-  const results = [...pageHits, ...(q.trim().length >= 2 ? hits : [])];
+  const data = getData();
+  const results = [...pageHits, ...(q.trim().length >= 2 ? globalSearch(data, currentUser(data), q) : [])];
 
   const go = (h?: SearchHit) => {
     if (!h) return;
@@ -211,7 +371,6 @@ function CommandPalette({ onClose, pages }: { onClose: () => void; pages: NavIte
           onChange={(e) => {
             setQ(e.target.value);
             setSel(0);
-            if (e.target.value.trim().length < 2) setHits([]);
           }}
           onKeyDown={(e) => {
             if (e.key === "ArrowDown") {

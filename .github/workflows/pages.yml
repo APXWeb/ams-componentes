@@ -1,0 +1,49 @@
+# Publica o projeto conceitual no GitHub Pages: https://apxweb.github.io/ams-componentes/
+# A demonstração não tem backend, então o site inteiro sai como arquivos estáticos.
+name: Publicar no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Build estático
+        run: npx next build && node _tools/flatten-rsc.cjs out && touch out/.nojekyll
+        env:
+          STATIC_EXPORT: "1"
+          BASE_PATH: /ams-componentes
+          PREVIEW_MODE: "1"
+          SITE_URL: https://apxweb.github.io/ams-componentes
+          NEXT_TELEMETRY_DISABLED: "1"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

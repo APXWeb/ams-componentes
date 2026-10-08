@@ -1,27 +1,16 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { eq } from "drizzle-orm";
-import { canSeeEmployee, requireUser } from "@/lib/auth";
-import { db, schema } from "@/db";
-import { EmployeeProfile } from "@/components/rh/employee-profile";
-import { SavedToast } from "@/components/rh/saved-toast";
+import { seedToday, staticIds } from "@/lib/demo/public";
+import { FuncionarioView } from "./view";
+
+export const generateStaticParams = () => staticIds("employees");
 
 export async function generateMetadata({ params }: PageProps<"/rh/funcionarios/[id]">): Promise<Metadata> {
-  const e = db.select({ name: schema.employees.name }).from(schema.employees).where(eq(schema.employees.id, Number((await params).id))).get();
-  return { title: e?.name ?? "Funcionário" };
+  const id = Number((await params).id);
+  const d = seedToday();
+  const row = d.employees.find((x) => x.id === id);
+  return { title: row ? `${row.name}` : "Funcionário" };
 }
 
-export default async function FuncionarioPage({ params, searchParams }: PageProps<"/rh/funcionarios/[id]">) {
-  const user = await requireUser();
-  const id = Number((await params).id);
-  const emp = Number.isInteger(id) ? db.select().from(schema.employees).where(eq(schema.employees.id, id)).get() : undefined;
-  // fora do escopo do usuário, a página simplesmente não existe para ele
-  if (!emp || !canSeeEmployee(user, emp)) notFound();
-  const sp = await searchParams;
-  return (
-    <>
-      <SavedToast flags={{ criado: "Funcionário cadastrado.", salvo: "Alterações salvas.", contratado: "Contratação concluída: cadastro criado e documentos admissionais pedidos." }} />
-      <EmployeeProfile user={user} employeeId={id} tab={typeof sp.aba === "string" ? sp.aba : undefined} basePath={`/rh/funcionarios/${id}`} self={user.employeeId === id} />
-    </>
-  );
+export default async function Page({ params }: PageProps<"/rh/funcionarios/[id]">) {
+  return <FuncionarioView id={Number((await params).id)} />;
 }

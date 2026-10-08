@@ -1,8 +1,8 @@
-import type { Role } from "@/db/schema";
+import type { Role } from "@/lib/demo/types";
 
 /*
- * Matriz de permissões. É a única fonte de verdade: o servidor chama `can()` em toda página,
- * Server Action e rota de arquivo. O menu apenas reflete a mesma matriz.
+ * Matriz de permissões por perfil. Na demonstração, as telas, as ações e o menu consultam `can()`;
+ * na versão real, a mesma matriz seria aplicada pelo backend em cada rota da API.
  */
 export const PERMISSIONS = {
   "dashboard.rh": ["ADMIN", "RH"],

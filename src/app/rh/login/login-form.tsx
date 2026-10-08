@@ -1,81 +1,116 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { Eye, EyeOff, LogIn } from "lucide-react";
-import { FormErrorsContext, PendingContext, SubmitButton, TextField, useFormAction } from "@/components/ui/form";
-import { login } from "../auth-actions";
+import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Eye, EyeOff, LogIn, Info } from "lucide-react";
+import { Avatar } from "@/components/ui/bits";
+import { useToast } from "@/components/ui/toast";
+import { DEMO_PERSONAS } from "@/lib/demo/seed";
+import { getData, latency, signIn } from "@/lib/demo/store";
 
-// Contas do ambiente de demonstração (criadas por scripts/db-setup.ts). Só aparecem com dados demo.
-const DEMO = [
-  { email: "admin@ams.example", role: "Administrador", hint: "Acesso completo" },
-  { email: "rh@ams.example", role: "RH", hint: "Mariana Campos" },
-  { email: "gestor@ams.example", role: "Gestor", hint: "Produção" },
-  { email: "funcionario@ams.example", role: "Funcionário", hint: "Operador" },
-];
-const DEMO_PASSWORD = "Ams@demo2026";
-
-export function LoginForm({ next, demo }: { next: string; demo: boolean }) {
-  const { state, onSubmit, pending } = useFormAction(login, { toast: false });
+/**
+ * Login de DEMONSTRAÇÃO: não há autenticação. O visitante escolhe um perfil (ou digita qualquer
+ * e-mail e senha) e entra no sistema com os dados fictícios daquele perfil.
+ */
+export function LoginForm() {
+  const router = useRouter();
+  const toast = useToast();
+  const sp = useSearchParams();
+  const [persona, setPersona] = useState(DEMO_PERSONAS[0]);
+  const [email, setEmail] = useState(DEMO_PERSONAS[0].email);
+  const [password, setPassword] = useState("demonstracao");
   const [show, setShow] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState<{ email?: string; password?: string }>({});
+  const notice = sp.get("saiu") ? "Você saiu da demonstração. Escolha um perfil para entrar de novo." : "";
 
-  const fill = (email: string) => {
-    const f = formRef.current;
-    if (!f) return;
-    (f.elements.namedItem("email") as HTMLInputElement).value = email;
-    (f.elements.namedItem("password") as HTMLInputElement).value = DEMO_PASSWORD;
-    f.requestSubmit();
+  const choose = (p: (typeof DEMO_PERSONAS)[number]) => {
+    setPersona(p);
+    setEmail(p.email);
+    setPassword("demonstracao");
+    setError({});
+  };
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const errs = {
+      ...(/^\S+@\S+\.\S+$/.test(email.trim()) ? {} : { email: "Informe um e-mail válido." }),
+      ...(password ? {} : { password: "Informe a senha." }),
+    };
+    setError(errs);
+    if (Object.keys(errs).length) return;
+    setPending(true);
+    await latency(700, 1000);
+    // um e-mail de perfil da demo entra com aquele perfil; qualquer outro entra como o perfil selecionado
+    const match = getData().users.find((u) => u.email === email.trim().toLowerCase() && u.active);
+    const userId = match?.id ?? persona.userId;
+    signIn(userId);
+    toast(`Bem-vindo(a), ${(match?.name ?? persona.person).split(" ")[0]}. Você está na demonstração como ${DEMO_PERSONAS.find((p) => p.userId === userId)?.title ?? "usuário"}.`);
+    router.push("/rh");
   };
 
   return (
     <>
-      <PendingContext.Provider value={pending}>
-        <form ref={formRef} onSubmit={onSubmit} noValidate className="stack" style={{ "--gap": "16px" } as React.CSSProperties}>
-          <FormErrorsContext.Provider value={state.fieldErrors ?? {}}>
-            <input type="hidden" name="next" value={next} />
-            {state.message && !state.ok ? (
-              <div className="notice notice--danger" role="alert">
-                {state.message}
-              </div>
-            ) : null}
-            <TextField label="E-mail" name="email" type="email" autoComplete="username" autoFocus />
-            <div style={{ position: "relative" }}>
-              <TextField label="Senha" name="password" type={show ? "text" : "password"} autoComplete="current-password" />
-              <button
-                type="button"
-                className="btn btn--ghost btn--icon btn--sm"
-                style={{ position: "absolute", right: 5, top: 30 }}
-                aria-label={show ? "Ocultar senha" : "Mostrar senha"}
-                aria-pressed={show}
-                onClick={() => setShow((v) => !v)}
-              >
-                {show ? <EyeOff aria-hidden /> : <Eye aria-hidden />}
-              </button>
-            </div>
-            <SubmitButton className="btn btn--lg btn--block">
-              <LogIn aria-hidden /> Entrar
-            </SubmitButton>
-            <p className="xsmall subtle">Esqueceu a senha? Fale com o administrador do sistema ou com o RH.</p>
-          </FormErrorsContext.Provider>
-        </form>
-      </PendingContext.Provider>
-
-      {demo ? (
-        <div className="demo-accounts">
-          <span className="demo-pill">Demonstração</span>
-          <p className="xsmall muted" style={{ marginTop: 8 }}>
-            Entre com um perfil para ver o que cada usuário acessa. Senha de todos: <code className="mono">{DEMO_PASSWORD}</code>
-          </p>
-          <div className="demo-accounts__grid">
-            {DEMO.map((d) => (
-              <button key={d.email} type="button" className="demo-acc" onClick={() => fill(d.email)} disabled={pending}>
-                <strong>{d.role}</strong>
-                <span>{d.hint}</span>
-              </button>
-            ))}
-          </div>
+      <span className="eyebrow">RH · Acesso</span>
+      <h2 style={{ marginTop: 10 }}>Entrar na demonstração</h2>
+      <p className="small muted" style={{ margin: "8px 0 20px" }}>
+        Escolha um perfil para ver o que cada pessoa acessa no sistema.
+      </p>
+      {notice ? (
+        <div className="notice" role="status" style={{ marginBottom: 16 }}>
+          {notice}
         </div>
       ) : null}
+
+      <div className="persona-grid" role="group" aria-label="Perfis de demonstração" style={{ marginBottom: 20 }}>
+        {DEMO_PERSONAS.map((p) => (
+          <button key={p.userId} type="button" className="persona" aria-pressed={persona.userId === p.userId} onClick={() => choose(p)} disabled={pending}>
+            <Avatar name={p.person} size="sm" />
+            <span className="persona__main">
+              <strong>{p.title}</strong>
+              <span>
+                {p.person === "Administrador do Sistema" ? p.detail : p.person}
+              </span>
+            </span>
+          </button>
+        ))}
+      </div>
+
+      <form onSubmit={submit} noValidate className="stack" style={{ "--gap": "16px" } as React.CSSProperties}>
+        <div className="field">
+          <label className="label" htmlFor="email">
+            E-mail
+          </label>
+          <input id="email" className="input" type="email" autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} aria-invalid={error.email ? true : undefined} aria-describedby={error.email ? "email-error" : undefined} />
+          {error.email ? (
+            <span className="field-error" id="email-error" role="alert">
+              {error.email}
+            </span>
+          ) : null}
+        </div>
+        <div className="field" style={{ position: "relative" }}>
+          <label className="label" htmlFor="password">
+            Senha
+          </label>
+          <input id="password" className="input" type={show ? "text" : "password"} autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} aria-invalid={error.password ? true : undefined} />
+          <button type="button" className="btn btn--ghost btn--icon btn--sm" style={{ position: "absolute", right: 5, top: 30 }} aria-label={show ? "Ocultar senha" : "Mostrar senha"} aria-pressed={show} onClick={() => setShow((v) => !v)}>
+            {show ? <EyeOff aria-hidden /> : <Eye aria-hidden />}
+          </button>
+          {error.password ? (
+            <span className="field-error" role="alert">
+              {error.password}
+            </span>
+          ) : null}
+        </div>
+        <button type="submit" className={`btn btn--lg btn--block ${pending ? "is-loading" : ""}`} aria-busy={pending} disabled={pending}>
+          <LogIn aria-hidden /> {pending ? "Entrando…" : `Entrar como ${persona.title}`}
+        </button>
+      </form>
+
+      <p className="xsmall subtle row" style={{ "--gap": "6px", alignItems: "flex-start", marginTop: 18 } as React.CSSProperties}>
+        <Info size={14} aria-hidden style={{ flex: "none", marginTop: 2 }} />
+        Sistema de demonstração com dados fictícios. Não há verificação de senha e nada é enviado para fora do navegador.
+      </p>
     </>
   );
 }

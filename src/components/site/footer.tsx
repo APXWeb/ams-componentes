@@ -3,6 +3,7 @@ import { ArrowUpRight, Phone, MessageCircle, MapPin, Clock } from "lucide-react"
 import { InstagramIcon, FacebookIcon, LinkedinIcon } from "@/components/ui/brand-icons";
 import { SITE } from "@/lib/site";
 import { categories } from "@/lib/catalog";
+import { asset } from "@/lib/asset";
 
 export function SiteFooter() {
   return (
@@ -11,7 +12,7 @@ export function SiteFooter() {
         <div className="footer-top">
           <div className="footer-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/img/logo-ams.png" alt="AMS Componentes" width={64} height={57} />
+            <img src={asset("/img/logo-ams.png")} alt="AMS Componentes" width={64} height={57} />
             <p>
               A maior fabricante nacional na linha de fusíveis automotivos. Fornecedora dos mais conceituados distribuidores de autopeças e da indústria do país.
             </p>

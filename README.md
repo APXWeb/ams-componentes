@@ -1,56 +1,61 @@
-# AMS Componentes — ecossistema digital
+# AMS Componentes — projeto conceitual
 
-Site institucional modernizado + **Trabalhe Conosco** + **RH privado**, num único produto Next.js.
+**Projeto conceitual desenvolvido pela APX Web para a AMS Componentes**, apresentado no portfólio da APX Web. Não substitui o site oficial da empresa: o site institucional é uma experiência completa e o sistema de RH é uma **demonstração interativa** com dados fictícios.
 
 ```
-/                   → site público (catálogo, empresa, representantes, eventos, contato)
-/trabalhe-conosco   → vagas e candidatura (alimenta o RH)
-/rh                 → área privada (login por perfil)
+/                   → site institucional (catálogo, empresa, representantes, eventos, contato)
+/trabalhe-conosco   → vagas, detalhes e candidatura (envio simulado)
+/rh                 → sistema de RH demonstrativo (login por perfil, sem autenticação real)
 ```
 
 ## Como rodar
 
 ```bash
 npm install
-npm run db:setup        # cria data/ams.db com DADOS DE DEMONSTRAÇÃO (apaga o banco anterior)
 npm run dev             # http://localhost:3000
 ```
 
-Logins de demonstração (senha `Ams@demo2026`), também disponíveis como botões na tela de login:
+Não há banco, backend, autenticação, upload ou e-mail. Tudo o que muda durante a demonstração (mover candidato no Kanban, aprovar férias, responder solicitação, publicar vaga ou comunicado, enviar candidatura pelo site) fica no `localStorage` do navegador e volta ao estado inicial a cada dia ou pelo menu do usuário → **Restaurar dados da demonstração**.
 
-| Perfil | E-mail | O que vê |
+**Entrar no RH:** em `/rh/login`, escolha um perfil e clique em Entrar (qualquer senha). Links diretos para `/rh/...` entram como RH. O perfil pode ser trocado a qualquer momento pelo menu do usuário, no rodapé da barra lateral.
+
+| Perfil | Pessoa | O que vê |
 |---|---|---|
-| Admin | admin@ams.example | tudo, inclusive usuários/permissões, auditoria e mensagens do site |
-| RH | rh@ams.example | funcionários, recrutamento, documentos, férias, solicitações, comunicados, indicadores |
-| Gestor | gestor@ams.example | a própria equipe (Produção), processos seletivos da área (somente leitura), solicitações e férias da equipe |
-| Funcionário | funcionario@ams.example | o próprio perfil, documentos, férias, solicitações e comunicados |
+| Recursos Humanos | Mariana Campos | funcionários, recrutamento, documentos, férias, solicitações, comunicados, indicadores |
+| Gestor | Ricardo Moreira (Produção) | a própria equipe, processos seletivos da área (somente leitura), férias e solicitações da equipe |
+| Funcionário | Lucas Pereira (Operador de Máquinas) | o próprio perfil, holerites e documentos, férias, solicitações e comunicados |
+| Administrador | Administrador do Sistema | tudo, inclusive usuários e permissões, auditoria e mensagens do site |
+
+**Roteiro sugerido para apresentar:** Painel → Funcionários (filtros, busca) → perfil de um funcionário (abas, documentos) → Recrutamento (Kanban) → candidato (currículo, avaliação, contratação) → Vagas → Férias (aprovar) → Solicitações (responder) → Comunicados. Para mostrar o caminho completo, envie uma candidatura em `/trabalhe-conosco` e abra o link "Ver a candidatura no RH".
 
 Verificações:
 
 ```bash
 npm run typecheck && npm run lint
-npm run test:e2e              # Playwright: build de produção com banco isolado (data/test.db)
-npm run db:setup -- --empty   # banco limpo só com o admin, para implantação
-npm run lgpd:retencao         # anonimiza candidatos com retenção vencida (agendar diariamente)
+npm run test:e2e        # Playwright: 27 testes (site, login, RH, Kanban, formulários, celular) num build de produção
 ```
 
 ## Hospedagem
 
-O RH grava banco (SQLite) e arquivos em disco, então a hospedagem precisa de **Node.js com disco persistente** montado em `/data`. Hospedagem estática (GitHub Pages, Netlify) ou serverless sem disco (Vercel) não servem sem trocar a camada de dados.
+**Publicado no GitHub Pages:** https://apxweb.github.io/ams-componentes/ (cada push na `main` publica de novo pelo workflow `.github/workflows/pages.yml`).
 
-**Render (recomendado, blueprint pronto em `render.yaml`):** [Deploy no Render](https://render.com/deploy?repo=https://github.com/APXWeb/ams-componentes) → confirmar o serviço `ams-componentes` (plano Starter, disco de 1 GB). Cada push na `main` publica de novo.
+Como a demonstração não tem backend, o site inteiro é exportado como arquivos estáticos:
 
-**Railway / Fly.io / VPS:** usar o `Dockerfile` e montar um volume em `/data`.
+```bash
+STATIC_EXPORT=1 BASE_PATH=/ams-componentes PREVIEW_MODE=1 npx next build
+node _tools/flatten-rsc.cjs out   # corrige os nomes dos arquivos de prefetch da exportação do Next 16
+```
+
+Também roda como app Next comum (Vercel, `render.yaml` no plano gratuito ou o `Dockerfile`). Manter `PREVIEW_MODE=1`: o site inteiro fica fora dos buscadores, para a demonstração nunca concorrer com o site oficial da AMS.
 
 | Variável | Uso |
 |---|---|
-| `SEED_DEMO` | `1` no primeiro boot cria os dados de demonstração; `0` cria banco vazio só com o admin |
-| `PREVIEW_MODE` | `1` bloqueia indexação do site inteiro (obrigatório enquanto houver dados fictícios); lido no build |
+| `STATIC_EXPORT` | `1` gera o site estático em `out/` |
+| `BASE_PATH` | subcaminho da publicação (`/ams-componentes` no GitHub Pages) |
+| `PREVIEW_MODE` | `1` bloqueia indexação do site inteiro; lido no build |
 | `SITE_URL` | endereço público (metadados, sitemap) |
-| `ADMIN_EMAIL`, `ADMIN_PASSWORD` | admin criado quando `SEED_DEMO=0` |
-| `DATABASE_PATH`, `STORAGE_PATH` | padrão `/data/ams.db` e `/data/storage` |
 
-O container aplica as migrations a cada boot sem apagar dados (`scripts/start.sh`) e expõe `/healthz`. Para recomeçar a demonstração do zero, apague `/data/ams.db` e reinicie o serviço.
+Na versão estática, registros criados durante a demonstração ganham página até um limite (ids do estado inicial + 40). Os redirecionamentos das URLs antigas do WordPress (`next.config.ts`) só valem quando há servidor Node.
 
 ## Fase 1 — Auditoria do site atual (out/2026)
 
@@ -72,16 +77,20 @@ O "projeto existente" é o site WordPress em produção. Não havia código-font
 
 ## Arquitetura
 
-- **Next.js 16 (App Router) + TypeScript**, Server Components e Server Actions. Catálogo estático (`generateStaticParams`); área privada dinâmica.
-- **SQLite + Drizzle ORM** (`src/db/schema.ts`, migrations em `drizzle/`). 17 tabelas relacionadas: `users, sessions, departments, positions, employees, employee_history, vacancies, candidates, applications, application_events, documents, vacations, requests, announcements, announcement_reads, audit_logs, contact_messages`. Para produção com muitos acessos simultâneos, o schema migra para PostgreSQL trocando o driver.
-- **Autenticação:** senha com scrypt; sessão em cookie `httpOnly`/`SameSite=Lax`/`Secure` com token aleatório (só o hash SHA-256 fica no banco); expira em 10 h ou 1 h sem uso; bloqueio de 15 min após 5 senhas erradas; limite de tentativas por IP e e-mail; erro genérico e tempo constante para e-mail inexistente.
-- **Autorização no servidor:** matriz única em `src/lib/permissions.ts`; `requireUser()` em toda página, ação e rota; escopo de dados em `src/lib/rh-scope.ts` (gestor só consulta a equipe, funcionário só a si). O `src/proxy.ts` faz apenas o redirecionamento otimista para o login.
-- **Arquivos privados** em `storage/` (fora de `public/`), nome aleatório, validação pela assinatura do arquivo (PDF/DOCX/JPG/PNG/WEBP, até 8 MB), entregues só por `/rh/arquivos/[id]` após checar o vínculo, com `no-store` e registro de acesso.
-- **Auditoria:** login, login recusado, logout, criação, edição, exclusão, desligamento, mudança de etapa, contratação, aprovação/recusa, upload, acesso a arquivo, exportação e alteração de permissão (`/rh/auditoria`, só admin).
+- **Next.js 16 (App Router) + TypeScript.** Site institucional em Server Components com catálogo estático; telas do RH são client components que leem a camada de dados da demo.
+- **Camada de dados da demonstração** em `src/lib/demo/`, separada das telas para ser trocada por uma API no futuro:
+  - `types.ts`: modelo relacional (departamentos, cargos, funcionários, usuários, vagas, candidatos, candidaturas e eventos, documentos, férias, solicitações, comunicados, histórico, auditoria, mensagens do site).
+  - `seed.ts`: gerador determinístico dos dados fictícios, com datas relativas ao dia (128 funcionários ativos, 5 vagas abertas, candidatos em todas as etapas, contratações vindas do recrutamento, férias, solicitações e comunicados coerentes entre si).
+  - `store.ts`: estado no navegador (`useSyncExternalStore` + `localStorage`, sincronizado entre abas), sessão de demonstração e latência simulada.
+  - `queries.ts`: consultas puras com o escopo de cada perfil (gestor só vê a equipe, funcionário só a si), busca global e notificações.
+  - `actions/`: ações com validação `zod` e a mesma assinatura usada pelos formulários (`(estado, FormData) => ActionState`). Na versão real, cada uma vira uma chamada à API sem mudar os componentes.
+- **Permissões:** matriz única em `src/lib/permissions.ts`, usada pelo menu, pelas telas e pelas ações. Na versão real, a mesma matriz seria aplicada no backend.
+- **Arquivos:** os escolhidos pelo visitante não saem do navegador (pré-visualização local nesta aba). Os documentos da demo são folhas de visualização geradas a partir dos dados (currículo, contrato, holerite, certificado, atestado), em `src/components/rh/document-viewer.tsx`.
+- **Para virar sistema real:** API e banco (o modelo em `types.ts` já é relacional), autenticação com sessão no servidor, armazenamento privado de arquivos, envio de e-mails e permissões aplicadas no backend. A versão anterior deste repositório, com SQLite/Drizzle e login real, está no histórico do git (commit `6fcb363`).
 
 ## LGPD
 
-Consentimento registrado na candidatura (data e versão do texto), retenção de 12 meses com rotina de anonimização (`npm run lgpd:retencao`), minimização (gestor não vê documentos nem e-mail pessoal da equipe), exportação CSV restrita e auditada, área privada com `noindex` e `no-store`. A página `/privacidade` é uma **minuta** para o jurídico da AMS validar (controlador, encarregado/DPO, prazos).
+Os formulários mostram o consentimento como no sistema real (candidatura com prazo de 12 meses) e o RH registra a data e a versão do consentimento de cada candidato. A página `/privacidade` é uma **minuta** para o jurídico da AMS validar se o projeto virar produção. Nenhum dado digitado na demonstração sai do navegador.
 
 ## Design system
 
@@ -95,14 +104,13 @@ Em `src/app/globals.css`, compartilhado por site e RH.
 
 ## Dados de demonstração
 
-`scripts/db-setup.ts` gera pessoas, vagas, candidaturas, documentos (PDFs fictícios), férias, solicitações e comunicados **fictícios** (`is_demo = 1`), com aviso "Dados de demonstração" no RH e "vagas fictícias" no site. Departamentos e cargos são genéricos de indústria e devem ser trocados pela estrutura real antes da implantação.
+Pessoas, vagas, candidaturas, documentos, férias, solicitações e comunicados são **fictícios** e gerados por `src/lib/demo/seed.ts`. O RH mostra o selo "Demonstração" e o site marca as vagas como fictícias. Departamentos e cargos são genéricos de indústria. Nenhum dado institucional da AMS foi inventado: textos, produtos, representantes e contatos do site vêm do site oficial.
 
-## Pendências para a AMS
+## Pendências caso o projeto vire produção
 
+- Backend, banco, autenticação real, armazenamento de arquivos e e-mails (ver Arquitetura).
 - Validar a minuta de privacidade/LGPD e o prazo de retenção de candidatos.
-- Informar departamentos, cargos e benefícios reais (só publicar benefícios confirmados).
+- Departamentos, cargos e benefícios reais (só publicar benefícios confirmados).
 - Fotos da fábrica em alta resolução (as atuais vêm de um banner de 1920×600).
 - Endereço completo da matriz (o site atual só publica "Cotia – SP").
 - Versões em inglês e espanhol (o site atual tem); esta versão é só pt-BR.
-- Envio de e-mails (aviso de candidatura, respostas do RH): hoje o acompanhamento é dentro do sistema.
-- Hospedagem com Node.js (o RH não roda em hospedagem estática como o GitHub Pages).

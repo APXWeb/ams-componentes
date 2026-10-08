@@ -1,44 +1,35 @@
-// Visita as rotas do RH com cada perfil e reporta status, erros de console e telas de erro.
-const { chromium } = require("@playwright/test");
-const BASE = process.argv[2] || "http://localhost:3100";
-const ROUTES = [
-  "/rh", "/rh/indicadores", "/rh/funcionarios", "/rh/funcionarios/novo", "/rh/funcionarios/1", "/rh/funcionarios/1?aba=documentos",
-  "/rh/funcionarios/1?aba=ferias", "/rh/funcionarios/1?aba=solicitacoes", "/rh/funcionarios/1?aba=historico", "/rh/funcionarios/3/editar",
-  "/rh/recrutamento", "/rh/recrutamento?vaga=1", "/rh/recrutamento/vagas", "/rh/recrutamento/vagas/nova", "/rh/recrutamento/vagas/1",
-  "/rh/candidatos/1", "/rh/documentos", "/rh/ferias", "/rh/solicitacoes", "/rh/solicitacoes/1", "/rh/comunicados", "/rh/perfil",
-  "/rh/auditoria", "/rh/usuarios", "/rh/mensagens", "/rh/conta", "/rh/exportar/funcionarios",
-];
-const ROLES = ["admin", "rh", "gestor", "funcionario"];
+// Uso: node _tools/crawl-rh.cjs <base> <pasta> [largura] [altura] [userId do perfil: 1 admin, 2 RH, 3 gestor, 4 funcionário] [rotas,separadas,por,vírgula]
+// Percorre as telas do RH, salva capturas e lista erros do console e rolagem horizontal.
+const path = require("path");
+const PROJ = path.join(__dirname, "..");
+const { chromium } = require(path.join(PROJ, "node_modules", "@playwright/test"));
+const fs = require("fs");
 (async () => {
+  const [base, out, w = "1440", h = "900", persona = "2", routesArg] = process.argv.slice(2);
+  fs.mkdirSync(out, { recursive: true });
   const b = await chromium.launch();
-  for (const role of ROLES) {
-    const ctx = await b.newContext({ viewport: { width: 1280, height: 900 } });
-    const p = await ctx.newPage();
-    const errors = [];
-    p.on("console", (m) => m.type() === "error" && errors.push(m.text().slice(0, 200)));
-    p.on("pageerror", (e) => errors.push(String(e).slice(0, 200)));
-    await p.goto(BASE + "/rh/login");
-    await p.fill("#email", `${role}@ams.example`);
-    await p.fill("#password", "Ams@demo2026");
-    await Promise.all([p.waitForURL((u) => !u.pathname.endsWith("/login")), p.click("button[type=submit]")]);
-    const out = [];
-    for (const r of ROUTES) {
-      errors.length = 0;
-      let status;
-      if (r.includes("exportar")) {
-        const res = await p.request.get(BASE + r);
-        status = res.status();
-        out.push(`${status} ${r}`);
-        continue;
-      }
-      const res = await p.goto(BASE + r, { waitUntil: "networkidle" });
-      status = res.status();
-      const txt = await p.locator("main").innerText().catch(() => "");
-      const flag = txt.includes("Algo deu errado") ? " !!ERRO" : txt.includes("Acesso não permitido") ? " (403)" : txt.includes("Registro não encontrado") ? " (404)" : "";
-      out.push(`${status} ${r}${flag}${errors.length ? "  CONSOLE: " + errors.join(" | ") : ""}`);
-    }
-    console.log(`\n== ${role}\n` + out.join("\n"));
-    await ctx.close();
+  const ctx = await b.newContext({ viewport: { width: +w, height: +h }, deviceScaleFactor: 1, locale: "pt-BR", timezoneId: "America/Sao_Paulo" });
+  await ctx.addInitScript((id) => {
+    try {
+      if (!localStorage.getItem("ams-demo:session")) localStorage.setItem("ams-demo:session", id);
+    } catch {}
+  }, persona);
+  const p = await ctx.newPage();
+  const errors = [];
+  p.on("console", (m) => (m.type() === "error" || m.type() === "warning") && errors.push(`[${p.url()}] ${m.type()}: ${m.text()}`));
+  p.on("pageerror", (e) => errors.push(`[${p.url()}] pageerror: ${e}`));
+  const routes = routesArg
+    ? routesArg.split(",")
+    : ["/rh", "/rh/funcionarios", "/rh/funcionarios/3", "/rh/funcionarios/3?aba=documentos", "/rh/funcionarios/3?aba=historico", "/rh/recrutamento", "/rh/recrutamento/vagas", "/rh/candidatos/15", "/rh/ferias", "/rh/solicitacoes", "/rh/solicitacoes/1", "/rh/comunicados", "/rh/documentos", "/rh/indicadores", "/rh/usuarios", "/rh/auditoria", "/rh/mensagens", "/rh/conta", "/rh/perfil", "/rh/funcionarios/novo", "/rh/recrutamento/vagas/nova"];
+  for (const r of routes) {
+    const t0 = Date.now();
+    await p.goto(base + r, { waitUntil: "networkidle", timeout: 120000 });
+    await p.waitForTimeout(900);
+    const name = r.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "") || "home";
+    await p.screenshot({ path: path.join(out, `${name}.png`), fullPage: true });
+    const overflow = await p.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+    console.log(`${r} ${Date.now() - t0}ms${overflow ? " HORIZONTAL-OVERFLOW" : ""}`);
   }
+  if (errors.length) console.log("CONSOLE:\n" + [...new Set(errors)].join("\n"));
   await b.close();
 })();

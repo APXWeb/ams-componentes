@@ -1,8 +1,10 @@
+"use client";
+
 import { Plus } from "lucide-react";
 import { ActionModal } from "@/components/ui/modal";
 import { SelectField, TextAreaField, TextField } from "@/components/ui/form";
 import { PRIORITY_LABEL, REQUEST_TYPE_LABEL } from "@/lib/labels";
-import { createRequest } from "@/app/rh/(app)/solicitacoes/actions";
+import { createRequest } from "@/lib/demo/actions/requests";
 
 export function NewRequestButton({ open }: { open?: boolean }) {
   return (

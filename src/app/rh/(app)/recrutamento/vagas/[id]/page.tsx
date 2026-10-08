@@ -1,33 +1,16 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { eq } from "drizzle-orm";
-import { requireUser } from "@/lib/auth";
-import { db, schema } from "@/db";
-import { PageHeader } from "@/components/rh/ui";
-import { VacancyForm } from "@/components/rh/vacancy-form";
-import { Badge } from "@/components/ui/bits";
-import { departmentOptions } from "@/lib/rh-options";
-import { VACANCY_STATUS_LABEL } from "@/lib/labels";
+import { seedToday, staticIds } from "@/lib/demo/public";
+import { EditarVagaView } from "./view";
 
-export const metadata: Metadata = { title: "Editar vaga" };
+export const generateStaticParams = () => staticIds("vacancies");
 
-export default async function EditarVagaPage({ params }: PageProps<"/rh/recrutamento/vagas/[id]">) {
-  await requireUser("recruitment.manage");
-  const v = db.select().from(schema.vacancies).where(eq(schema.vacancies.id, Number((await params).id))).get();
-  if (!v) notFound();
-  const positions = db.select({ id: schema.positions.id, title: schema.positions.title, departmentId: schema.positions.departmentId }).from(schema.positions).all();
-  return (
-    <>
-      <PageHeader
-        back={{ href: "/rh/recrutamento/vagas", label: "Vagas" }}
-        title={
-          <>
-            {v.title} <Badge status={v.status}>{VACANCY_STATUS_LABEL[v.status]}</Badge>
-          </>
-        }
-        description="Alterações em vagas publicadas aparecem no site imediatamente."
-      />
-      <VacancyForm initial={v} departments={departmentOptions()} positions={positions} />
-    </>
-  );
+export async function generateMetadata({ params }: PageProps<"/rh/recrutamento/vagas/[id]">): Promise<Metadata> {
+  const id = Number((await params).id);
+  const d = seedToday();
+  const row = d.vacancies.find((x) => x.id === id);
+  return { title: row ? `Editar: ${row.title}` : "Editar vaga" };
+}
+
+export default async function Page({ params }: PageProps<"/rh/recrutamento/vagas/[id]">) {
+  return <EditarVagaView id={Number((await params).id)} />;
 }

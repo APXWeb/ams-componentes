@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Check, Palmtree, X, Ban } from "lucide-react";
 import { ActionModal } from "@/components/ui/modal";
@@ -5,7 +7,7 @@ import { SelectField, TextAreaField, TextField } from "@/components/ui/form";
 import { Badge, Empty } from "@/components/ui/bits";
 import { VACATION_STATUS_LABEL } from "@/lib/labels";
 import { fmtDate, relative, todayISO } from "@/lib/format";
-import { cancelVacation, requestVacation, reviewVacation } from "@/app/rh/(app)/ferias/actions";
+import { cancelVacation, requestVacation, reviewVacation } from "@/lib/demo/actions/vacations";
 
 export type VacationRow = {
   id: number;
@@ -61,7 +63,7 @@ export function VacationTable({
               <tr key={r.id}>
                 {showEmployee ? (
                   <td className="cell-main">
-                    <Link className="row-link" href={`/rh/funcionarios/${r.employeeId}?aba=ferias`} style={{ position: "static" }}>
+                    <Link className="row-link row-link--plain" href={`/rh/funcionarios/${r.employeeId}?aba=ferias`}>
                       {r.employeeName}
                     </Link>
                     {r.department ? <small className="subtle" style={{ display: "block" }}>{r.department}</small> : null}

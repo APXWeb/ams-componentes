@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Save, Send } from "lucide-react";
 import { FormErrorsContext, PendingContext, SelectField, SubmitButton, TextAreaField, TextField, useFormAction } from "@/components/ui/form";
-import { saveVacancy } from "@/app/rh/(app)/recrutamento/actions";
+import { saveVacancy } from "@/lib/demo/actions/recruitment";
 
 type V = {
   id?: number;

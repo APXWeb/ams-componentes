@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useTransition } from "react";
 import { Mail, Phone, User, Building2 } from "lucide-react";
 import type { Rep } from "@/lib/site";
@@ -130,4 +130,11 @@ export function RepMap({ states, initial, directContact }: { states: State[]; in
       </div>
     </div>
   );
+}
+
+/** Estado pedido em ?uf= (lido no navegador); sem parâmetro, mostra São Paulo. */
+export function RepMapFromUrl({ states, directContact }: { states: State[]; directContact: React.ReactNode }) {
+  const asked = (useSearchParams().get("uf") ?? "").toUpperCase();
+  const uf = states.some((s) => s.uf === asked) ? asked : "SP";
+  return <RepMap key={uf} states={states} initial={uf} directContact={directContact} />;
 }

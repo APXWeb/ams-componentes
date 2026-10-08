@@ -1,6 +1,6 @@
 import type { ZodError } from "zod";
 
-/** Resultado padrão das Server Actions, consumido por useActionState no cliente. */
+/** Resultado padrão das ações (hoje simuladas no navegador; amanhã, chamadas à API). */
 export type ActionState = {
   ok: boolean;
   message?: string;
@@ -9,6 +9,8 @@ export type ActionState = {
   at?: number;
   /** mensagens que o usuário precisa copiar (ex.: senha provisória) ficam mais tempo na tela */
   sticky?: boolean;
+  /** rota para onde a tela navega após o sucesso */
+  redirect?: string;
 };
 
 export const initialState: ActionState = { ok: false };
@@ -17,8 +19,8 @@ export function fail(message: string, fieldErrors?: Record<string, string>): Act
   return { ok: false, message, fieldErrors, at: Date.now() };
 }
 
-export function done(message: string, sticky = false): ActionState {
-  return { ok: true, message, at: Date.now(), sticky };
+export function done(message: string, opts: { sticky?: boolean; redirect?: string } = {}): ActionState {
+  return { ok: true, message, at: Date.now(), ...opts };
 }
 
 export function zodFail(err: ZodError, message = "Revise os campos destacados."): ActionState {

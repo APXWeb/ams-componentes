@@ -1,26 +1,18 @@
-import { CheckCircle2, Eye, FilePlus2, FileText, Trash2, Upload, XCircle, FileQuestion } from "lucide-react";
+"use client";
+
+import Link from "next/link";
+import { CheckCircle2, FilePlus2, FileText, Trash2, Upload, XCircle, FileQuestion } from "lucide-react";
 import { ActionModal } from "@/components/ui/modal";
 import { FileDrop, SelectField, TextAreaField, TextField } from "@/components/ui/form";
 import { Badge, Empty } from "@/components/ui/bits";
 import { DOC_CATEGORY_LABEL, DOC_STATUS_LABEL } from "@/lib/labels";
 import { fmtBytes, fmtDate, todayISO } from "@/lib/format";
-import { ACCEPT_DOCS } from "@/lib/storage";
-import { deleteDocument, requestDocument, reviewDocument, uploadDocument } from "@/app/rh/(app)/documentos/actions";
-import type { DocCategory } from "@/db/schema";
+import { ACCEPT_DOCS } from "@/lib/demo/actions/util";
+import { deleteDocument, requestDocument, reviewDocument, uploadDocument } from "@/lib/demo/actions/documents";
+import type { DocCategory, DocumentRow } from "@/lib/demo/types";
+import { DocumentPreview } from "./document-viewer";
 
-export type DocRow = {
-  id: number;
-  title: string;
-  category: DocCategory;
-  status: "PENDENTE" | "ENVIADO" | "VALIDADO" | "RECUSADO";
-  storageKey: string | null;
-  sizeBytes: number | null;
-  uploadedAt: string | null;
-  dueDate: string | null;
-  note: string | null;
-  employeeId: number | null;
-  employeeName?: string;
-};
+export type DocRow = DocumentRow & { employeeName?: string };
 
 const CATEGORY_OPTIONS = (Object.keys(DOC_CATEGORY_LABEL) as DocCategory[]).filter((c) => c !== "CURRICULO").map((c) => ({ value: c, label: DOC_CATEGORY_LABEL[c] }));
 
@@ -71,9 +63,9 @@ export function DocumentTable({ docs, hr, canUpload, showEmployee }: { docs: Doc
                 {showEmployee ? (
                   <td data-label="Funcionário">
                     {d.employeeId ? (
-                      <a className="link" href={`/rh/funcionarios/${d.employeeId}?aba=documentos`}>
+                      <Link className="link" href={`/rh/funcionarios/${d.employeeId}?aba=documentos`}>
                         {d.employeeName}
-                      </a>
+                      </Link>
                     ) : (
                       "—"
                     )}
@@ -88,11 +80,7 @@ export function DocumentTable({ docs, hr, canUpload, showEmployee }: { docs: Doc
                 </td>
                 <td>
                   <div className="row" style={{ "--gap": "4px", justifyContent: "flex-end" } as React.CSSProperties}>
-                    {d.storageKey ? (
-                      <a href={`/rh/arquivos/${d.id}`} target="_blank" rel="noopener" className="btn btn--ghost btn--sm" aria-label={`Abrir ${d.title}`}>
-                        <Eye aria-hidden /> Ver
-                      </a>
-                    ) : null}
+                    {d.storageKey ? <DocumentPreview doc={d} /> : null}
                     {(d.status === "PENDENTE" || d.status === "RECUSADO") && canUpload ? (
                       <ActionModal
                         trigger={
@@ -144,7 +132,7 @@ export function DocumentTable({ docs, hr, canUpload, showEmployee }: { docs: Doc
                         trigger={<Trash2 aria-hidden />}
                         triggerClass="btn btn--ghost btn--sm btn--icon"
                         title="Excluir documento"
-                        description={`"${d.title}" será removido permanentemente, incluindo o arquivo. A exclusão fica registrada na auditoria.`}
+                        description={`"${d.title}" será removido do cadastro. A exclusão fica registrada na auditoria.`}
                         action={deleteDocument}
                         submitLabel="Excluir"
                         submitClass="btn btn--danger"
@@ -194,7 +182,7 @@ export function DocumentHrActions({ employees, employeeId }: { employees?: { val
         }
         triggerClass="btn"
         title="Enviar documento"
-        description="O arquivo fica no armazenamento privado e só é acessível com login."
+        description="O arquivo fica no cadastro do funcionário e só é acessível dentro do sistema."
         action={uploadDocument}
         submitLabel="Salvar documento"
         hidden={employeeId ? { employeeId } : undefined}

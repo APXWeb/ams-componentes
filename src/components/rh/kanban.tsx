@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { useMemo, useOptimistic, useState, useTransition } from "react";
 import { CalendarClock, GripVertical, MapPin, Search, Star } from "lucide-react";
-import type { Stage } from "@/db/schema";
+import type { Stage } from "@/lib/demo/types";
 import { useToast } from "@/components/ui/toast";
-import { moveApplication } from "@/app/rh/(app)/recrutamento/actions";
+import { moveApplication } from "@/lib/demo/actions/recruitment";
 
 export type KCard = {
   id: number;
@@ -35,7 +35,7 @@ function since(iso: string) {
 
 /**
  * Quadro do pipeline. Arraste os cartões (mouse) ou use o seletor de etapa em cada cartão
- * (teclado e celular). A mudança é otimista e confirmada pelo servidor, que grava o histórico.
+ * (teclado e celular). A mudança aparece na hora e a ação grava o histórico da candidatura.
  */
 export function Kanban({ cards, editable, showVacancy }: { cards: KCard[]; editable: boolean; showVacancy: boolean }) {
   const toast = useToast();

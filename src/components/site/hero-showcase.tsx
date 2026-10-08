@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowRight, Pause, Play } from "lucide-react";
+import { asset } from "@/lib/asset";
 
 export type ShowcaseItem = { name: string; group: string; image: string; codes: string; count: number; href: string };
 export type ShowcaseLaunch = { name: string; image: string; href: string };
@@ -28,7 +29,7 @@ export function HeroShowcase({ items, launch }: { items: ShowcaseItem[]; launch?
         {items.map((it, n) => (
           <div key={it.name} className={`showcase__slide ${n === i ? "is-active" : ""}`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={it.image} alt="" width={720} height={720} fetchPriority={n === 0 ? "high" : "low"} />
+            <img src={asset(it.image)} alt="" width={720} height={720} fetchPriority={n === 0 ? "high" : "low"} />
           </div>
         ))}
       </div>
@@ -36,7 +37,7 @@ export function HeroShowcase({ items, launch }: { items: ShowcaseItem[]; launch?
       {launch ? (
         <Link href={launch.href} className="float-card float-card--top">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={launch.image} alt="" width={84} height={84} />
+          <img src={asset(launch.image)} alt="" width={84} height={84} />
           <span>
             <span className="float-card__label">Lançamento</span>
             <strong>{launch.name}</strong>

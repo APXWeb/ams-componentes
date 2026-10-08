@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useDeferredValue, useMemo, useState, useTransition } from "react";
 import { Search, X, PackageSearch } from "lucide-react";
 
@@ -195,4 +195,12 @@ export function ProductBrowser({
       </div>
     </div>
   );
+}
+
+/** Lê ?linha= e ?q= da URL no navegador (o HTML estático sai com o catálogo completo). */
+export function ProductBrowserFromUrl({ items, categories }: { items: BrowserItem[]; categories: { slug: string; name: string }[] }) {
+  const sp = useSearchParams();
+  const linha = sp.get("linha") ?? "";
+  const q = (sp.get("q") ?? "").slice(0, 60);
+  return <ProductBrowser items={items} categories={categories} initialCategory={categories.some((c) => c.slug === linha) ? linha : ""} initialQuery={q} />;
 }

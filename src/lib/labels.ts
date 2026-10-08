@@ -1,4 +1,4 @@
-import type { DocCategory, EmploymentType, Priority, RequestStatus, RequestType, Stage } from "@/db/schema";
+import type { DocCategory, EmploymentType, Priority, RequestStatus, RequestType, Stage } from "@/lib/demo/types";
 
 export const STAGE_LABEL: Record<Stage, string> = {
   CANDIDATO: "Candidato",

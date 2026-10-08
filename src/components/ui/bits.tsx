@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { STATUS_TONE, type Tone } from "@/lib/labels";
 import { initials } from "@/lib/format";
+import { asset } from "@/lib/asset";
 
 export function Badge({ children, tone, status, plain }: { children: React.ReactNode; tone?: Tone; status?: string; plain?: boolean }) {
   const t = tone ?? (status ? STATUS_TONE[status] : undefined) ?? "neutral";
@@ -20,17 +21,44 @@ export function Empty({ icon: Icon, title, children, action }: { icon: LucideIco
   );
 }
 
-export function Avatar({ name, photoId, size }: { name: string; photoId?: number | null; size?: "sm" | "lg" }) {
+// tons da marca para as iniciais: cada pessoa mantém sempre a mesma cor
+const AVATAR_TONES = ["t1", "t2", "t3", "t4", "t5", "t6"];
+const toneOf = (name: string) => AVATAR_TONES[[...name].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7) % AVATAR_TONES.length];
+
+export function Avatar({ name, photo, size }: { name: string; photo?: string | null; size?: "sm" | "lg" | "xl" }) {
   return (
-    <span className={`avatar ${size ? `avatar--${size}` : ""}`} aria-hidden>
-      {photoId ? (
-        // foto privada servida pela rota autenticada de arquivos
+    <span className={`avatar ${size ? `avatar--${size}` : ""} ${photo ? "" : `avatar--${toneOf(name)}`}`} aria-hidden>
+      {photo ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={`/rh/arquivos/${photoId}`} alt="" loading="lazy" />
+        <img src={photo} alt="" loading="lazy" />
       ) : (
         initials(name)
       )}
     </span>
+  );
+}
+
+/** Esqueleto de carregamento de uma página do RH (KPIs + painel). */
+export function PageSkeleton({ kpis = 4 }: { kpis?: number }) {
+  return (
+    <div aria-busy="true" aria-label="Carregando">
+      <div className="skeleton" style={{ width: 120, height: 12, marginBottom: 12 }} />
+      <div className="skeleton" style={{ width: 280, height: 30, marginBottom: 26 }} />
+      {kpis ? (
+        <div className="kpis">
+          {Array.from({ length: kpis }, (_, i) => (
+            <div key={i} className="kpi">
+              <div className="skeleton" style={{ width: "60%", height: 12 }} />
+              <div className="skeleton" style={{ width: "30%", height: 28, marginTop: 6 }} />
+            </div>
+          ))}
+        </div>
+      ) : null}
+      <div className="panel" style={{ height: 320 }}>
+        <div className="skeleton" style={{ margin: 18, height: 16, width: "40%" }} />
+        <div className="skeleton" style={{ margin: 18, height: 220 }} />
+      </div>
+    </div>
   );
 }
 
@@ -74,6 +102,6 @@ export function Panel({
 export function AmsMark({ size = 40 }: { size?: number }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src="/img/logo-ams.png" alt="" width={size} height={Math.round(size * 0.886)} style={{ width: size, height: "auto" }} />
+    <img src={asset("/img/logo-ams.png")} alt="" width={size} height={Math.round(size * 0.886)} style={{ width: size, height: "auto" }} />
   );
 }

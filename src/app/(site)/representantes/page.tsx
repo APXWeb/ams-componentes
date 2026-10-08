@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Factory, Globe2, Phone, Mail } from "lucide-react";
-import { RepMap } from "@/components/site/rep-map";
+import { Suspense } from "react";
+import { RepMap, RepMapFromUrl } from "@/components/site/rep-map";
 import { SITE, STATES } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -10,10 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/representantes" },
 };
 
-export default async function RepresentantesPage({ searchParams }: PageProps<"/representantes">) {
-  const sp = await searchParams;
-  const asked = typeof sp.uf === "string" ? sp.uf.toUpperCase() : "";
-  const uf = STATES.some((s) => s.uf === asked) ? asked : "SP";
+export default function RepresentantesPage() {
   const direct = (
     <dl className="stack small" style={{ "--gap": "6px", margin: 0 } as React.CSSProperties}>
       <div>
@@ -49,7 +47,9 @@ export default async function RepresentantesPage({ searchParams }: PageProps<"/r
 
       <section className="section--tight">
         <div className="container">
-          <RepMap states={STATES} initial={uf} directContact={direct} />
+          <Suspense fallback={<RepMap states={STATES} initial="SP" directContact={direct} />}>
+            <RepMapFromUrl states={STATES} directContact={direct} />
+          </Suspense>
         </div>
       </section>
 

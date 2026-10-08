@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X, Phone, Clock, Mail, Download, ArrowRight, Lock } from "lucide-react";
 import { NAV, SITE } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 export type NavCategory = { slug: string; name: string; count: number; cover: string };
 
@@ -84,7 +85,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
         <div className="container mainbar__inner">
           <Link href="/" className="brand" aria-label="AMS Componentes, página inicial">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/img/logo-ams.png" alt="" width={46} height={41} className="brand__mark" />
+            <img src={asset("/img/logo-ams.png")} alt="" width={46} height={41} className="brand__mark" />
             <span className="brand__text">
               <span className="brand__name">AMS Componentes</span>
               <span className="brand__sub">Desde {SITE.founded}</span>
@@ -122,7 +123,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                           <Link key={c.slug} href={`/produtos?linha=${c.slug}`} className="mega__item">
                             <span className="mega__img">
                               {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img src={c.cover} alt="" loading="lazy" width={64} height={64} />
+                              <img src={asset(c.cover)} alt="" loading="lazy" width={64} height={64} />
                             </span>
                             <span>
                               <span className="mega__name">{c.name}</span>

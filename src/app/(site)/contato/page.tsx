@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Clock, Mail, MapPin, MessageCircle, Phone, Globe2, Factory } from "lucide-react";
-import { ContactForm } from "@/components/site/public-forms";
-import { productBySlug } from "@/lib/catalog";
+import { Suspense } from "react";
+import { ContactForm, ContactFormFromUrl } from "@/components/site/public-forms";
+import { products } from "@/lib/catalog";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -11,9 +12,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contato" },
 };
 
-export default async function ContatoPage({ searchParams }: PageProps<"/contato">) {
-  const sp = await searchParams;
-  const product = typeof sp.produto === "string" ? productBySlug(sp.produto)?.name : undefined;
+const PRODUCT_NAMES = Object.fromEntries(products.map((p) => [p.slug, p.name]));
+
+export default function ContatoPage() {
   const items = [
     { icon: Phone, t: "Telefone", v: <a href={SITE.phoneHref}>{SITE.phone}</a> },
     { icon: MessageCircle, t: "WhatsApp", v: <a href={SITE.whatsappHref} target="_blank" rel="noopener">{SITE.whatsapp}</a> },
@@ -63,7 +64,9 @@ export default async function ContatoPage({ searchParams }: PageProps<"/contato"
             <p className="small muted" style={{ marginBottom: 22 }}>
               Respondemos pelo e-mail informado, em horário comercial.
             </p>
-            <ContactForm product={product} />
+            <Suspense fallback={<ContactForm />}>
+              <ContactFormFromUrl products={PRODUCT_NAMES} />
+            </Suspense>
           </div>
         </div>
       </section>

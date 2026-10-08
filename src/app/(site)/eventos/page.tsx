@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/eventos" },
 };
 
-export const revalidate = 3600;
-
 export default function EventosPage() {
   const today = todayISO();
   return (

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ProductBrowser, type BrowserItem } from "@/components/site/product-browser";
+import { Suspense } from "react";
+import { ProductBrowser, ProductBrowserFromUrl, type BrowserItem } from "@/components/site/product-browser";
 import { categories, products, totalCodes } from "@/lib/catalog";
 
 export const metadata: Metadata = {
@@ -12,10 +13,7 @@ export const metadata: Metadata = {
 
 const norm = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
-export default async function ProdutosPage({ searchParams }: PageProps<"/produtos">) {
-  const sp = await searchParams;
-  const linha = typeof sp.linha === "string" && categories.some((c) => c.slug === sp.linha) ? sp.linha : "";
-  const q = typeof sp.q === "string" ? sp.q.slice(0, 60) : "";
+export default function ProdutosPage() {
   const items: BrowserItem[] = products.map((p) => ({
     slug: p.slug,
     name: p.name,
@@ -45,7 +43,9 @@ export default async function ProdutosPage({ searchParams }: PageProps<"/produto
       </section>
       <section className="section--tight">
         <div className="container">
-          <ProductBrowser items={items} categories={categories.map((c) => ({ slug: c.slug, name: c.name }))} initialCategory={linha} initialQuery={q} />
+          <Suspense fallback={<ProductBrowser items={items} categories={categories.map((c) => ({ slug: c.slug, name: c.name }))} initialCategory="" initialQuery="" />}>
+            <ProductBrowserFromUrl items={items} categories={categories.map((c) => ({ slug: c.slug, name: c.name }))} />
+          </Suspense>
         </div>
       </section>
     </>

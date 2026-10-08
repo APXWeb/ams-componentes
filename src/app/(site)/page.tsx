@@ -7,9 +7,7 @@ import { Counter } from "@/components/ui/motion";
 import { RepPicker } from "@/components/site/rep-picker";
 import { categories, CATEGORY_INFO, codeColumn, launches, productBySlug, products, totalCodes } from "@/lib/catalog";
 import { ABOUT, SITE, STATES } from "@/lib/site";
-import { getOpenVacancies } from "@/lib/public-data";
-
-export const revalidate = 300;
+import { getOpenVacancies } from "@/lib/demo/public";
 
 function slide(slug: string): ShowcaseItem {
   const p = productBySlug(slug)!;
